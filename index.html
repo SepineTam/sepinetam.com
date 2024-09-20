@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谭淞的个人学术主页</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #0047AB;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            //display: block;
+            background-color: #ffffff;
+            object-fit: cover;
+            object-position: top; /* 显示图片的顶部 */
+        }
+        .profile-image-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        h1, h2 {
+            margin: 0 0 10px;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+        .sidebar h2 {
+            font-size: 18px;
+            text-align: center;
+            font-weight: normal;
+        }
+        .contact-info {
+            max-width: 200px; /* 限制最大宽度 */
+            margin: 20px auto 0; /* 上边距40px，左右居中 */
+            padding: 20px 30px; /* 添加一些左右内边距 */
+        }
+
+        .contact-info a {
+            display: block; /* 使用flex布局 */
+            color: white;
+            text-decoration: none;
+            margin-bottom: 18px; /* 增加底部间距 */
+            font-size: 18px; /* 增大字体 */
+            transition: transform 0.2s; /* 添加悬停动画 */
+        }
+        .contact-info a:hover {
+            transform: scale(1.2); /* 悬停时稍微放大 */
+            //margin-bottom: 20px; /* 增加底部间距 */
+        }
+        .contact-info i {
+            width: 30px;
+            margin-right: 30px;
+            font-size: 24px; /* 增大图标 */
+        }
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #0047AB;
+            border-bottom: 2px solid #0047AB;
+            padding-bottom: 5px;
+        }
+        .education-item, .publication-item {
+            margin-bottom: 15px;
+        }
+        .publication-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .language-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-switch a {
+            color: #0047AB;
+            text-decoration: none;
+        }
+        .section a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                order: -1;
+            }
+            .main-content {
+                width: 100%;
+            }
+            .nav {
+                justify-content: center;
+            }
+            .nav a {
+                margin: 0 5px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <div class="profile-image-container">
+            <img src="src/img/photo11.png" alt="谭淞一寸没底1:1照片" class="profile-image">
+        </div>
+        <h1>谭淞</h1>
+        <h2>上海大学经济学院</h2>
+        <div class="contact-info">
+            <a href="mailto:sepinetam@gmail.com"><i class="fas fa-envelope"></i> Mail</a>
+            <a href="https://blog.sepinetam.com" target="_blank"><i class="fas fa-blog"></i> Blog</a>
+            <a href="https://github.com/sepinetam" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/sepinetam" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://x.com/sepinetam" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://www.youtube.com/@SepineTam" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://orcid.org/orcid=0009-0006-7449-1094" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="language-switch">
+            <a href="./index_en.html">English</a>
+        </div>
+        <div class="nav">
+            <a href="#intro">简介</a>
+            <a href="#education">教育经历</a>
+<!--            <a href="#publications">论文专利</a>-->
+            <a href="#awards">荣誉奖项</a>
+<!--            <a href="#conferences">学术会议</a>-->
+            <a href="#experience">工作实习</a>
+            <a href="#others">其他</a>
+        </div>
+
+        <div class="section" id="intro">
+            <h2>简介</h2>
+            <p>我现正在上海大学经济学院进行本科学习。我的研究领域包括：</p>
+            <ul>
+                <li>农村经济发展</li>
+                <li>ESG与SDGs</li>
+                <li>博弈论</li>
+            </ul>
+            <p>目前我正在做环保方面的研究。</p>
+        </div>
+
+        <div class="section" id="education">
+            <h2>教育经历</h2>
+            <div class="education-item">
+                <p><strong>2022 - 至今</strong>，上海大学，经济学院，本科在读</p>
+            </div>
+<!--            <div class="education-item">-->
+<!--                <p><strong>2022 - 2024</strong>，上海大学，经济学院，经济学学士学位</p>-->
+<!--            </div>-->
+        </div>
+
+        <div class="section" id="others">
+            <h2>其他</h2>
+            <div class="publication-item">
+                <h3>Gresh</h3>
+                <p>项目介绍：</p>
+                <p>你好</p>
+                <a href="https://github.com/sepinetam">GitHub</a>
+            </div>
+        </div>
+        <div class="section" id="others">
+            <h2>其他</h2>
+            <div class="publication-item">
+                <h3>Gresh</h3>
+                <p>项目介绍：</p>
+                <p>你好</p>
+                <a href="https://github.com/sepinetam">GitHub</a>
+            </div>
+        </div>
+
+        <div class="section" id="others">
+            <h2>其他</h2>
+            <div class="publication-item">
+                <h3>Gresh</h3>
+                <p>项目介绍：</p>
+                <p>你好</p>
+                <a href="https://github.com/sepinetam">GitHub</a>
+            </div>
+        </div>
+        <div class="section" id="others">
+            <h2>其他</h2>
+            <div class="publication-item">
+                <h3>Gresh</h3>
+                <p>项目介绍：</p>
+                <p>你好</p>
+                <a href="https://github.com/sepinetam">GitHub</a>
+            </div>
+        </div>
+
+        <div class="section" id="others">
+            <h2>其他</h2>
+            <div class="publication-item">
+                <h3>Gresh</h3>
+                <p>项目介绍：</p>
+                <p>你好</p>
+                <a href="https://github.com/sepinetam">GitHub</a>
+            </div>
+        </div>
+        <div class="section" id="others">
+            <h2>其他</h2>
+            <div class="publication-item">
+                <h3>Gresh</h3>
+                <p>项目介绍：</p>
+                <p>你好</p>
+                <a href="https://github.com/sepinetam">GitHub</a>
+            </div>
+        </div>
+
+        <!-- 可以继续添加更多部分，如荣誉奖项、学术会议、工作实习等 -->
+    </div>
+</div>
+</body>
+</html>
