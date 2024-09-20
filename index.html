@@ -154,48 +154,51 @@
             align-items: center;
             height: 100%;
             width: 30%; /* language-switch占据nav的30%宽度 */
-            justify-content: flex-end; /* 将语言切换按钮靠右对齐 */
+            justify-content: flex-end;
         }
         .language-switch a {
             color: #0047AB;
             text-decoration: none;
-            padding: 0 15px;
+            padding: 0 2%; /* 使用百分比替代固定像素值 */
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100%;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s;
             position: relative;
-            width: 80px; /* 设置固定宽度 */
-            margin-left: 10px; /* 添加左边距 */
+            width: 45%; /* 每个语言选项占language-switch的45%宽度 */
+            margin-left: 5%; /* 使用百分比作为左边距 */
+            overflow: hidden;
         }
         .language-switch a span,
-        .language-switch a i {
-            transition: opacity 0.3s;
-        }
-        .language-switch a i {
+        .language-switch a .hover-text {
+            transition: opacity 0.3s, transform 0.3s;
             position: absolute;
-            opacity: 0;
+            width: 100%;
+            text-align: center;
         }
-        .language-switch a:hover {
-            background-color: #f0f0f0; /* 浅灰色背景 */
-            color: transparent; /* 使文字透明 */
+        .language-switch a .hover-text {
+            opacity: 0;
+            transform: translateY(100%);
         }
         .language-switch a:hover span {
             opacity: 0;
+            transform: translateY(-100%);
         }
-        .language-switch a:hover i {
+        .language-switch a:hover .hover-text {
             opacity: 1;
-            color: initial; /* 恢复图标原本的颜色 */
+            transform: translateY(0);
         }
-        
-        /* 为西班牙语和英语按钮添加特定的悬停背景色 */
-        .language-switch a[href="./index_sp.html"]:hover {
-            background-color: #FFF8DC; /* 浅黄色背景，适合西班牙国旗 */
+        .language-switch a:hover {
+            background-color: #f0f0f0;
         }
+
+        /* 移除之前的特定悬停背景色 */
+        .language-switch a[href="./index_sp.html"]:hover,
         .language-switch a[href="./index_en.html"]:hover {
-            background-color: #F0F8FF; /* 浅蓝色背景，适合美国国旗 */
+            background-color: #f0f0f0;
         }
+
         .sections {
             margin-top: 20px;
             margin-left: 30px;
@@ -292,26 +295,25 @@
                 <a href="#"><span>简介</span><i class="fas fa-user"></i></a>
                 <a href="#education"><span>教育经历</span><i class="fas fa-graduation-cap"></i></a>
                 <a href="#production"><span>项目经历</span><i class="fas fa-project-diagram"></i></a>
-                <a href="#awards"><span>荣誉奖项</span><i class="fas fa-trophy"></i></a>
+                <a href="#awards"><span>奖项证书</span><i class="fas fa-trophy"></i></a>
                 <a href="#experience"><span>工作实习</span><i class="fas fa-briefcase"></i></a>
                 <a href="#others"><span>其他</span><i class="fas fa-ellipsis-h"></i></a>
             </div>
 
             <div class="language-switch">
-                <a href="./index_sp.html"><span>Spanish</span><i class="fas fa-flag-spain"></i></a>
-                <a href="./index_en.html"><span>English</span><i class="fas fa-flag-usa"></i></a>
+                <a href="./index_sp.html"><span>Spanish</span><span class="hover-text">🇪🇸 Spanish</span></a>
+                <a href="./index_en.html"><span>English</span><span class="hover-text">🇺🇸 English</span></a>
             </div>
         </div>
         <div class="sections">
             <div class="section" id="intro">
                 <h2>简介</h2>
-                <p>我现正在上海大学经济学院进行本科学习。我的研究领域包括：</p>
+                <p>我现正在上海大学经济学院进行本科的学习，我的研究领域包括：</p>
                 <ul>
                     <li>农村经济发展</li>
-                    <li>ESG与SDGs</li>
+                    <li>环境与可持续发展</li>
                     <li>博弈论</li>
                 </ul>
-                <p>目前我正在做环保方面的研究。</p>
             </div>
 
             <div class="section" id="education">
@@ -327,37 +329,15 @@
                     <p><strong>2022 - 至今</strong>，上海大学，经济学院，本科在读</p>
                 </div>
             </div>
-
-            <div class="section" id="others">
-                <h2>其他</h2>
-                <div class="publication-item">
-                    <h3>Gresh</h3>
-                    <p>项目介绍：</p>
-                    <p>你好</p>
-                    <a href="https://github.com/sepinetam">GitHub</a>
-                </div>
-            </div>
-            <div class="section" id="others">
-                <h2>其他</h2>
-                <div class="publication-item">
-                    <h3>Gresh</h3>
-                    <p>项目介绍：</p>
-                    <p>你好</p>
-                    <a href="https://github.com/sepinetam">GitHub</a>
+            <div class="section" id="awards">
+                <h2>奖项证书</h2>
+                <div class="production-item">
+                    <p><strong>2022 - 至今</strong>，上海大学，经济学院，本科在读</p>
                 </div>
             </div>
 
-            <div class="section" id="others">
-                <h2>其他</h2>
-                <div class="publication-item">
-                    <h3>Gresh</h3>
-                    <p>项目介绍：</p>
-                    <p>你好</p>
-                    <a href="https://github.com/sepinetam">GitHub</a>
-                </div>
-            </div>
-            <div class="section" id="others">
-                <h2>其他</h2>
+            <div class="section" id="experience">
+                <h2>工作实习</h2>
                 <div class="publication-item">
                     <h3>Gresh</h3>
                     <p>项目介绍：</p>
@@ -375,15 +355,7 @@
                     <a href="https://github.com/sepinetam">GitHub</a>
                 </div>
             </div>
-            <div class="section" id="others">
-                <h2>其他</h2>
-                <div class="publication-item">
-                    <h3>Gresh</h3>
-                    <p>项目介绍：</p>
-                    <p>你好</p>
-                    <a href="https://github.com/sepinetam">GitHub</a>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
