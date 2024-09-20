@@ -39,7 +39,7 @@
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            padding-top: 60px; /* 添加这行，为固定的nav留出空间 */
+            padding-top: 60px; /* 调整为与nav高度一致 */
         }
         .profile-image {
             width: 200px;
@@ -99,18 +99,19 @@
             font-size: 24px;
         }
         .nav {
-            position: fixed; /* 改为fixed */
+            position: fixed;
             top: 0;
-            left: 250px; /* 与侧边栏宽度相同 */
+            left: 250px;
             right: 0;
             background-color: white;
             z-index: 999;
-            padding: 20px;
+            padding: 10px 20px; /* 减小padding */
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #e0e0e0;
             box-sizing: border-box;
+            height: 60px; /* 固定nav高度 */
         }
         .nav a {
             text-decoration: none;
@@ -122,9 +123,12 @@
             padding: 20px;
             overflow-y: auto;
             flex-grow: 1;
+            padding-top: 20px; /* 添加顶部内边距 */
         }
         .section {
+            margin-top: 40px;
             margin-bottom: 30px;
+            scroll-margin-top: 80px; /* 调整此值以确保锚点定位正确 */
         }
         .section h2 {
             color: #0047AB;
@@ -176,6 +180,9 @@
             }
             .language-switch {
                 margin-left: 0;
+            }
+            .section {
+                scroll-margin-top: 0;
             }
         }
     </style>
