@@ -362,7 +362,7 @@ h1, h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.1);
-    font-size: 1.15em;
+    font-size: 1em;
     white-space: nowrap;
     //color: #ff4500;
     color: #573f00; /* 悬停时的文字颜色，这里使用橙红色作为示例 */
