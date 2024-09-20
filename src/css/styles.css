@@ -218,7 +218,7 @@ h1, h2 {
     margin-top: 15px; /* 将margin从底部移到顶部 */
     margin-bottom: 0; /* 移除底部margin */
 }
-.education-item .school-logo{
+.education-item .logo{
     height: 1.2em; 
     width: auto; 
     padding: 0 2px;
@@ -318,7 +318,7 @@ h1, h2 {
     margin: 0;
 }
 
-.school-logo {
+.logo {
     height: 1.3em;
     width: auto;
     margin-right: 5px;
