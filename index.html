@@ -214,17 +214,22 @@
             border-bottom: 2px solid #0047AB;
             padding-top: 5px; /* 将padding从底部移到顶部 */
             padding-bottom: 10px; /* 增加底部padding */
-            margin-bottom: 15px; /* ��加底部margin */
+            margin-bottom: 15px; /* 增加底部margin */
             display: flex;
             align-items: center;
         }
         .section h2 i {
-            font-size: 0.9em; /* 使图标比文字小20% */
+            font-size: 0.8em; /* 使图标比文字小20% */
             margin-right: 10px; /* 增加图标和文字之间的间距 */
         }
         .education-item, .publication-item {
             margin-top: 15px; /* 将margin从底部移到顶部 */
             margin-bottom: 0; /* 移除底部margin */
+        }
+        .education-item .school-logo{
+            height: 1.2em; 
+            width: auto; 
+            padding: 0 2px;
         }
         .publication-item img {
             max-width: 100%;
@@ -238,6 +243,15 @@
         .section a {
             color: #000000;
             text-decoration: none;
+            transition: all 0.3s ease; /* 添加过渡效果 */
+        }
+
+        .section a:hover {
+            font-weight: bold;
+            color: white;
+            background-color: #0047AB; /* 添加背景色以增强可读性 */
+            padding: 2px 5px; /* 添加一些内边距 */
+            border-radius: 3px; /* 添加圆角 */
         }
 
         @media (max-width: 768px) {
@@ -274,6 +288,49 @@
             .section {
                 scroll-margin-top: 0;
             }
+        }
+
+        .production-item p {
+            margin-left: 0; /* 移除整体缩进 */
+        }
+
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            margin-bottom: 15px;
+        }
+        .item .header {
+            display: flex;
+            width: 100%;
+            align-items: baseline;
+        }
+        .item time {
+            width: 240px; /* 保持总长度固定 */
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .item .title {
+            font-weight: bold;
+            flex-grow: 1;
+            padding-left: 20px; /* 添加一些左边距 */
+        }
+        .item .details {
+            width: 100%;
+            padding-left: 20px; /* 与time的宽度相同 */
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        .item .details p {
+            margin: 0;
+        }
+
+        .school-logo {
+            height: 1.3em;
+            width: auto;
+            margin-right: 5px;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -325,41 +382,92 @@
 
             <div class="section" id="education">
                 <h2><i class="fas fa-graduation-cap"></i>教育经历</h2>
-                <div class="education-item">
-                    <p><strong>2022 - 至今</strong>，上海大学，经济学院，经济学本科在读</p>
+                <div class="item">
+                    <div class="header">
+                        <time>2022 - 至今</time>
+                        <div class="title">
+                            <img src="https://www.shu.edu.cn/images/slog.png" class="school-logo" alt="上海大学">
+                            <a href="https://www.shu.edu.cn" target="_blank">上海大学</a> <a href="https://soe.shu.edu.cn" target="_blank">经济学院</a> 经济学本科在读
+                        </div>
+                    </div>
+<!--                    <div class="education-details">-->
+<!--                        <p>GPA：3.83/4.00</p>-->
+<!--                        <p>还有啥写的啊</p>-->
+<!--                    </div>-->
                 </div>
+<!--                <div class="education-item">-->
+<!--                    <div class="education-header">-->
+<!--                        <time>2022 - 至今</time>-->
+<!--                        <div class="school-info">-->
+<!--                            <img src="https://www.shu.edu.cn/images/slog.png" class="school-logo" alt="上海大学">-->
+<!--                            上海大学 经济学院 经济学本科在读-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="education-details">-->
+<!--                        <p>GPA：3.83/4.00</p>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
 
             <div class="section" id="production">
                 <h2><i class="fas fa-project-diagram"></i>项目经历</h2>
-                <div class="production-item">
-                    <p><strong>2022 - 至今</strong>，上海大学，经济学院，本科在读</p>
+                <div class="item">
+                    <div class="header">
+                        <time>2024.07 - 至今</time>
+                        <div class="title">上海大学经济学院知行杯</div>
+                    </div>
+                    <div class="details">
+                        <p>项目题目：<strong>长三角地区一体化绿色发展——基于环保认识与发展战略的研究</strong></p>
+                        <p>项目宣传网站：<a href="https://gresh.com.cn">Gresh</a></p>
+                        <p>微信公众号：<a href="https://mp.weixin.qq.com/s/A7Hj9Ef10-F4dwzoNE-FVA">Gresh·绿意庇沪</a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="header">
+                        <time>2023.09 - 至今</time>
+                        <div class="title">上海大学校级创新创业项目</div>
+                    </div>
+                    <div class="details">
+                        <p>项目题目：<strong>我国农村流通体系的再造——基于供销合作社的新构想</strong></p>
+                    </div>
                 </div>
             </div>
             <div class="section" id="awards">
                 <h2><i class="fas fa-trophy"></i>奖项证书</h2>
-                <div class="production-item">
-                    <p><strong>2022 - 至今</strong>，上海大学，经济学院，本科在读</p>
+                <div class="item">
+                    <div class="header">
+                        <time>2024.08.29</time>
+                        <div class="title">奖项名称</div>
+                    </div>
+                    <div class="details">
+                        <p>奖项详细信息</p>
+                    </div>
                 </div>
             </div>
 
             <div class="section" id="experience">
                 <h2><i class="fas fa-briefcase"></i>工作实习</h2>
-                <div class="publication-item">
-                    <h3>Gresh</h3>
-                    <p>项目介绍：</p>
-                    <p>你好</p>
-                    <a href="https://github.com/sepinetam">GitHub</a>
+                <div class="item">
+                    <div class="header">
+                        <time>2023.01 - 2023.06</time>
+                        <div class="title">公司名称</div>
+                    </div>
+                    <div class="details">
+                        <p>实习经历详细信息</p>
+                    </div>
                 </div>
             </div>
 
             <div class="section" id="others">
                 <h2><i class="fa-solid fa-square-check"></i>其他</h2>
-                <div class="publication-item">
-                    <h3>Gresh</h3>
-                    <p>项目介绍：</p>
-                    <p>你好</p>
-                    <a href="https://github.com/sepinetam">GitHub</a>
+                <div class="item">
+                    <div class="header">
+                        <time>2023.01 - 2023.06</time>
+                        <div class="title">其他项目名称</div>
+                    </div>
+                    <div class="details">
+                        <p>其他项目详细信息</p>
+                    </div>
                 </div>
             </div>
 
