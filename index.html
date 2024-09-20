@@ -134,22 +134,25 @@
             color: #0047AB;
         }
         .sections {
-            padding: 20px;
+            margin-top: 20px;
+            margin-left: 30px;
             overflow-y: auto;
             flex-grow: 1;
         }
         .section {
-            margin-top: 40px;
-            margin-bottom: 30px;
-            scroll-margin-top: 80px; /* 调整此值以确保锚点定位正确 */
+            margin-bottom: 30px; /* 移除底部margin */
+            scroll-margin-top: 80px;
         }
         .section h2 {
             color: #0047AB;
             border-bottom: 2px solid #0047AB;
-            padding-bottom: 5px;
+            padding-top: 5px; /* 将padding从底部移到顶部 */
+            padding-bottom: 10px; /* 增加底部padding */
+            margin-bottom: 15px; /* 添加底部margin */
         }
         .education-item, .publication-item {
-            margin-bottom: 15px;
+            margin-top: 15px; /* 将margin从底部移到顶部 */
+            margin-bottom: 0; /* 移除底部margin */
         }
         .publication-item img {
             max-width: 100%;
@@ -223,7 +226,7 @@
     <div class="main-content">
         <div class="nav">
             <div class="nav-links">
-                <a href="#intro">简介</a>
+                <a href="#">简介</a>
                 <a href="#education">教育经历</a>
                 <a href="#production">项目经历</a>
                 <a href="#awards">荣誉奖项</a>
