@@ -105,33 +105,96 @@
             right: 0;
             background-color: white;
             z-index: 999;
-            padding: 0;
+            padding: 0 20px; /* 添加左右内边距 */
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #e0e0e0;
             box-sizing: border-box;
             height: 60px;
+            width: calc(100% - 250px); /* 设置nav宽度为除侧边栏外的所有空间 */
         }
-        .nav-links, .language-switch {
+        .nav-links {
             display: flex;
             align-items: center;
             height: 100%;
+            width: 70%; /* nav-links占据nav的70%宽度 */
+            justify-content: space-between;
         }
-        .nav a, .language-switch a {
+        .nav-links a {
             text-decoration: none;
             color: #333;
-            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            transition: background-color 0.3s;
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .nav-links a span, .nav-links a i {
+            position: absolute;
+            transition: opacity 0.3s;
+        }
+        .nav-links a span {
+            opacity: 1;
+        }
+        .nav-links a i {
+            opacity: 0;
+        }
+        .nav-links a:hover span {
+            opacity: 0;
+        }
+        .nav-links a:hover i {
+            opacity: 1;
+        }
+        .language-switch {
             display: flex;
             align-items: center;
             height: 100%;
-            transition: background-color 0.3s;
-        }
-        .nav a:hover, .language-switch a:hover {
-            background-color: #f0f0f0;
+            width: 30%; /* language-switch占据nav的30%宽度 */
+            justify-content: flex-end; /* 将语言切换按钮靠右对齐 */
         }
         .language-switch a {
             color: #0047AB;
+            text-decoration: none;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative;
+            width: 80px; /* 设置固定宽度 */
+            margin-left: 10px; /* 添加左边距 */
+        }
+        .language-switch a span,
+        .language-switch a i {
+            transition: opacity 0.3s;
+        }
+        .language-switch a i {
+            position: absolute;
+            opacity: 0;
+        }
+        .language-switch a:hover {
+            background-color: #f0f0f0; /* 浅灰色背景 */
+            color: transparent; /* 使文字透明 */
+        }
+        .language-switch a:hover span {
+            opacity: 0;
+        }
+        .language-switch a:hover i {
+            opacity: 1;
+            color: initial; /* 恢复图标原本的颜色 */
+        }
+        
+        /* 为西班牙语和英语按钮添加特定的悬停背景色 */
+        .language-switch a[href="./index_sp.html"]:hover {
+            background-color: #FFF8DC; /* 浅黄色背景，适合西班牙国旗 */
+        }
+        .language-switch a[href="./index_en.html"]:hover {
+            background-color: #F0F8FF; /* 浅蓝色背景，适合美国国旗 */
         }
         .sections {
             margin-top: 20px;
@@ -226,15 +289,17 @@
     <div class="main-content">
         <div class="nav">
             <div class="nav-links">
-                <a href="#">简介</a>
-                <a href="#education">教育经历</a>
-                <a href="#production">项目经历</a>
-                <a href="#awards">荣誉奖项</a>
-                <a href="#experience">工作实习</a>
-                <a href="#others">其他</a>
+                <a href="#"><span>简介</span><i class="fas fa-user"></i></a>
+                <a href="#education"><span>教育经历</span><i class="fas fa-graduation-cap"></i></a>
+                <a href="#production"><span>项目经历</span><i class="fas fa-project-diagram"></i></a>
+                <a href="#awards"><span>荣誉奖项</span><i class="fas fa-trophy"></i></a>
+                <a href="#experience"><span>工作实习</span><i class="fas fa-briefcase"></i></a>
+                <a href="#others"><span>其他</span><i class="fas fa-ellipsis-h"></i></a>
             </div>
+
             <div class="language-switch">
-                <a href="./index_en.html">English</a>
+                <a href="./index_sp.html"><span>Spanish</span><i class="fas fa-flag-spain"></i></a>
+                <a href="./index_en.html"><span>English</span><i class="fas fa-flag-usa"></i></a>
             </div>
         </div>
         <div class="sections">
