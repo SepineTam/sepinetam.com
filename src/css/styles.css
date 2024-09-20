@@ -1,3 +1,11 @@
+:root {
+    --sidebar-width: 20%;
+    --main-content-width: calc(100% - var(--sidebar-width));
+    --nav-links-width: 65%;
+    --language-switch-width: 15%; /* 这是相对于main-content的宽度 */
+    --nav-spacing: calc(100% - var(--nav-links-width) - var(--language-switch-width));
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -5,14 +13,16 @@ body {
     background-color: #f0f0f0;
     overflow-x: hidden;
 }
+
 .container {
     display: flex;
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
 }
+
 .sidebar {
-    width: 250px;
+    width: var(--sidebar-width);
     background-color: #0047AB;
     color: white;
     padding: 20px;
@@ -22,17 +32,22 @@ body {
     bottom: 0;
     overflow-y: auto;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .main-content {
     flex: 1;
-    margin-left: 250px;
-    width: calc(100% - 250px);
+    margin-left: var(--sidebar-width);
+    width: var(--main-content-width);
     box-sizing: border-box;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    padding-top: 60px; /* 调整为与nav高度一致 */
+    padding-top: 60px;
 }
+
 .profile-image {
     width: 200px;
     height: 200px;
@@ -42,6 +57,7 @@ body {
     object-fit: cover;
     object-position: top;
 }
+
 .profile-image-container {
     width: 200px;
     height: 200px;
@@ -50,24 +66,29 @@ body {
     overflow: hidden;
     background-color: #ffffff;
 }
+
 .profile-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
+
 h1, h2 {
     margin: 0 0 10px;
 }
+
 .sidebar h1 {
     font-size: 24px;
     text-align: center;
 }
+
 .sidebar h2 {
     font-size: 18px;
     text-align: center;
     font-weight: normal;
 }
+
 .contact-info {
     max-width: 200px;
     margin: 20px auto 0;
@@ -82,37 +103,42 @@ h1, h2 {
     font-size: 18px;
     transition: transform 0.2s;
 }
+
 .contact-info a:hover {
     transform: scale(1.2);
 }
+
 .contact-info i {
     width: 30px;
     margin-right: 30px;
     font-size: 24px;
 }
+
 .nav {
     position: fixed;
     top: 0;
-    left: 250px;
+    left: var(--sidebar-width);
     right: 0;
     background-color: white;
     z-index: 999;
-    padding: 0 20px; /* 添加左右内边距 */
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e0e0e0;
     box-sizing: border-box;
     height: 60px;
-    width: calc(100% - 250px); /* 设置nav宽度为除侧边栏外的所有空间 */
+    width: var(--main-content-width);
 }
+
 .nav-links {
     display: flex;
     align-items: center;
     height: 100%;
-    width: 80%; /* nav-links占据nav的80%宽度 */
+    width: var(--nav-links-width);
     justify-content: space-between;
 }
+
 .nav-links a {
     text-decoration: none;
     color: #333;
@@ -125,10 +151,12 @@ h1, h2 {
     text-align: center;
     position: relative;
 }
+
 .nav-links a span, .nav-links a i {
     position: absolute;
     transition: opacity 0.3s;
 }
+
 .nav-links a span {
     opacity: 1;
 }
@@ -145,21 +173,23 @@ h1, h2 {
     display: flex;
     align-items: center;
     height: 100%;
-    width: 20%; /* language-switch占据nav的20%宽度 */
+    width: var(--language-switch-width);
     justify-content: flex-end;
+    padding-right: 20px;
+    /* margin-right: 20px; */
 }
 .language-switch a {
     color: #0047AB;
     text-decoration: none;
-    padding: 0 2%; /* 使用百分比替代固定像素值 */
+    padding: 0 2%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     transition: background-color 0.3s;
     position: relative;
-    width: 45%; /* 每个语言选项占language-switch的45%宽度 */
-    margin-left: 5%; /* 使用百分比作为左边距 */
+    width: 45%;
+    margin-left: 5%;
     overflow: hidden;
 }
 .language-switch a span,
@@ -198,29 +228,29 @@ h1, h2 {
     flex-grow: 1;
 }
 .section {
-    margin-bottom: 30px; /* 移除底部margin */
+    margin-bottom: 30px;
     scroll-margin-top: 80px;
 }
 .section h2 {
     color: #0047AB;
     border-bottom: 2px solid #0047AB;
-    padding-top: 5px; /* 将padding从底部移到顶部 */
-    padding-bottom: 10px; /* 增加底部padding */
-    margin-bottom: 15px; /* 增加底部margin */
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
 .section h2 i {
-    font-size: 0.8em; /* 使图标比文字小20% */
-    margin-right: 10px; /* 增加图标和文字之间的间距 */
+    font-size: 0.8em;
+    margin-right: 10px;
 }
 .education-item, .publication-item {
-    margin-top: 15px; /* 将margin从底部移到顶部 */
-    margin-bottom: 0; /* 移除底部margin */
+    margin-top: 15px;
+    margin-bottom: 0;
 }
-.education-item .logo{
-    height: 1.2em; 
-    width: auto; 
+.education-item .logo {
+    height: 1.2em;
+    width: auto;
     padding: 0 2px;
 }
 .publication-item img {
@@ -235,15 +265,15 @@ h1, h2 {
 .section a {
     color: #000000;
     text-decoration: none;
-    transition: all 0.3s ease; /* 添加过渡效果 */
+    transition: all 0.3s ease;
 }
 
 .section a:hover {
     font-weight: bold;
     color: white;
-    background-color: #0047AB; /* 添加背景色以增强可读性 */
-    padding: 2px 5px; /* 添加一些内边距 */
-    border-radius: 3px; /* 添加圆角 */
+    background-color: #0047AB;
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
 @media (max-width: 768px) {
@@ -258,7 +288,7 @@ h1, h2 {
     .main-content {
         width: 100%;
         margin-left: 0;
-        padding-top: 0; /* 在移动设备上移除顶部padding */
+        padding-top: 0;
     }
     .nav {
         position: static;
@@ -283,7 +313,7 @@ h1, h2 {
 }
 
 .production-item p {
-    margin-left: 0; /* 移除整体缩进 */
+    margin-left: 0;
 }
 
 .item {
@@ -298,7 +328,7 @@ h1, h2 {
     align-items: baseline;
 }
 .item time {
-    width: 240px; /* 保持总长度固定 */
+    width: 240px;
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
@@ -306,11 +336,11 @@ h1, h2 {
 .item .title {
     font-weight: bold;
     flex-grow: 1;
-    padding-left: 20px; /* 添加一些左边距 */
+    padding-left: 20px;
 }
 .item .details {
     width: 100%;
-    padding-left: 20px; /* 与time的宽度相同 */
+    padding-left: 20px;
     box-sizing: border-box;
     margin-top: 5px;
 }
@@ -332,7 +362,7 @@ h1, h2 {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 5px;
-    margin-bottom: 10px;    /* 增加上边距 */
+    margin-bottom: 10px;
 }
 
 .skill::before {
@@ -364,8 +394,7 @@ h1, h2 {
     transform: translate(-50%, -50%) scale(1.1);
     font-size: 1em;
     white-space: nowrap;
-    //color: #ff4500;
-    color: #573f00; /* 悬停时的文字颜色，这里使用橙红色作为示例 */
+    color: #573f00;
 }
 
 .skill li:hover > span {
@@ -380,7 +409,7 @@ h1, h2 {
     transform: translate(-50%, -50%);
     font-size: 0.9em;
     white-space: nowrap;
-    color: #0047AB; /* 初始文字颜色 */
+    color: #0047AB;
     opacity: 0;
     transition: all 0.3s ease;
 }
