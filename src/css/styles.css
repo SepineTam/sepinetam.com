@@ -1,0 +1,390 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+.sidebar {
+    width: 250px;
+    background-color: #0047AB;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    box-sizing: border-box;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; /* 调整为与nav高度一致 */
+}
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-color: #ffffff;
+    object-fit: cover;
+    object-position: top;
+}
+.profile-image-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+h1, h2 {
+    margin: 0 0 10px;
+}
+.sidebar h1 {
+    font-size: 24px;
+    text-align: center;
+}
+.sidebar h2 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+}
+.contact-info {
+    max-width: 200px;
+    margin: 20px auto 0;
+    padding: 20px 30px;
+}
+
+.contact-info a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 18px;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+.contact-info a:hover {
+    transform: scale(1.2);
+}
+.contact-info i {
+    width: 30px;
+    margin-right: 30px;
+    font-size: 24px;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    background-color: white;
+    z-index: 999;
+    padding: 0 20px; /* 添加左右内边距 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    height: 60px;
+    width: calc(100% - 250px); /* 设置nav宽度为除侧边栏外的所有空间 */
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 80%; /* nav-links占据nav的80%宽度 */
+    justify-content: space-between;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: background-color 0.3s;
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.nav-links a span, .nav-links a i {
+    position: absolute;
+    transition: opacity 0.3s;
+}
+.nav-links a span {
+    opacity: 1;
+}
+.nav-links a i {
+    opacity: 0;
+}
+.nav-links a:hover span {
+    opacity: 0;
+}
+.nav-links a:hover i {
+    opacity: 1;
+}
+.language-switch {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 20%; /* language-switch占据nav的20%宽度 */
+    justify-content: flex-end;
+}
+.language-switch a {
+    color: #0047AB;
+    text-decoration: none;
+    padding: 0 2%; /* 使用百分比替代固定像素值 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: background-color 0.3s;
+    position: relative;
+    width: 45%; /* 每个语言选项占language-switch的45%宽度 */
+    margin-left: 5%; /* 使用百分比作为左边距 */
+    overflow: hidden;
+}
+.language-switch a span,
+.language-switch a .hover-text {
+    transition: opacity 0.3s, transform 0.3s;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.language-switch a .hover-text {
+    opacity: 0;
+    transform: translateY(100%);
+}
+.language-switch a:hover span {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.language-switch a:hover .hover-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+.language-switch a:hover {
+    background-color: #f0f0f0;
+}
+
+/* 移除之前的特定悬停背景色 */
+.language-switch a[href="./index_sp.html"]:hover,
+.language-switch a[href="./index_en.html"]:hover {
+    background-color: #f0f0f0;
+}
+
+.sections {
+    margin-top: 20px;
+    margin-left: 30px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+.section {
+    margin-bottom: 30px; /* 移除底部margin */
+    scroll-margin-top: 80px;
+}
+.section h2 {
+    color: #0047AB;
+    border-bottom: 2px solid #0047AB;
+    padding-top: 5px; /* 将padding从底部移到顶部 */
+    padding-bottom: 10px; /* 增加底部padding */
+    margin-bottom: 15px; /* 增加底部margin */
+    display: flex;
+    align-items: center;
+}
+.section h2 i {
+    font-size: 0.8em; /* 使图标比文字小20% */
+    margin-right: 10px; /* 增加图标和文字之间的间距 */
+}
+.education-item, .publication-item {
+    margin-top: 15px; /* 将margin从底部移到顶部 */
+    margin-bottom: 0; /* 移除底部margin */
+}
+.education-item .school-logo{
+    height: 1.2em; 
+    width: auto; 
+    padding: 0 2px;
+}
+.publication-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.language-switch a {
+    color: #0047AB;
+    text-decoration: none;
+}
+.section a {
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+.section a:hover {
+    font-weight: bold;
+    color: white;
+    background-color: #0047AB; /* 添加背景色以增强可读性 */
+    padding: 2px 5px; /* 添加一些内边距 */
+    border-radius: 3px; /* 添加圆角 */
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+    }
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 0; /* 在移动设备上移除顶部padding */
+    }
+    .nav {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 0;
+    }
+    .nav-links, .language-switch {
+        width: 100%;
+    }
+    .nav a, .language-switch a {
+        height: 40px;
+        padding: 0 20px;
+    }
+    .language-switch {
+        margin-left: 0;
+    }
+    .section {
+        scroll-margin-top: 0;
+    }
+}
+
+.production-item p {
+    margin-left: 0; /* 移除整体缩进 */
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
+.item .header {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+}
+.item time {
+    width: 240px; /* 保持总长度固定 */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.item .title {
+    font-weight: bold;
+    flex-grow: 1;
+    padding-left: 20px; /* 添加一些左边距 */
+}
+.item .details {
+    width: 100%;
+    padding-left: 20px; /* 与time的宽度相同 */
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+.item .details p {
+    margin: 0;
+}
+
+.school-logo {
+    height: 1.3em;
+    width: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.skill {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;    /* 增加上边距 */
+}
+
+.skill::before {
+    content: attr(data-label);
+    margin-right: 10px;
+    align-self: center;
+}
+
+.skill li {
+    background-color: #dddbdb;
+    color: #000435;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill li:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    font-size: 1.15em;
+    white-space: nowrap;
+    //color: #ff4500;
+    color: #573f00; /* 悬停时的文字颜色，这里使用橙红色作为示例 */
+}
+
+.skill li:hover > span {
+    opacity: 0;
+}
+
+.skill li::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9em;
+    white-space: nowrap;
+    color: #0047AB; /* 初始文字颜色 */
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.skill li:hover::after {
+    opacity: 1;
+}
