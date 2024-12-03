@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papers</title>
+    <link rel="stylesheet" href="../src/css/paper.css">
+</head>
+<body>
+<div class="container">
+    <h1>Papers</h1>
+
+    <!-- 筛选面板 -->
+    <div class="filter-panel">
+        <select id="yearFilter">
+            <option value="all">所有年份</option>
+        </select>
+        <select id="journalFilter">
+            <option value="all">所有期刊</option>
+        </select>
+        <select id="authorFilter">
+            <option value="all">所有作者</option>
+        </select>
+    </div>
+
+    <!-- 论文列表容器 -->
+    <div id="paperList" class="paper-list">
+        <!-- 论文条目将通过JavaScript动态插入 -->
+        <div class="loading">加载中...</div>
+    </div>
+</div>
+<script src="../src/js/paper.js"></script>
+</body>
+</html>
