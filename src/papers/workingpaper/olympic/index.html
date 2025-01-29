@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond the Podium</title>
+    <link rel="stylesheet" href="../src/info.css">
+    <script src="../src/info.js"></script>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+<div class="info">
+    <div class="title">Beyond the Podium: Medal Counts Prediction, Great Coaches and Host Effect</div>
+    <div class="author">
+        <ul>
+            <li>Song Tan</li>
+            <li>Muyao Feng</li>
+            <li>Jialin Xu</li>
+        </ul>
+    </div>
+    <div class="abstract">
+        “The Olympic Games are a platform for nations to showcase their strength, unity, and the human spirit, transcending politics and differences,” said Thomas Bach. Undoubtedly, medals and effective Olympic strategies are crucial for nations. Can the final medal counts be predicted? To effectively address this question and offer valuable guidance for national Olympic committees, we present the following insights.<br>
+        For Task 1, it is requisite to establish a model to predict the medal counts for each country  in the Los Angeles, USA summer Olympics in 2028, while also exploring the impact of specific events on a nation's total medal count. We propose an improved Random Forest Model that includes both training and test datasets, which reflects a country's medal count based on the performance of its athletes. We calculated the correlation coefficients to identify several features highly correlated with medal counts. Additionally, we account for changes in the athletes' composition by classifying them as Continuing Athletes and New Athletes, which facilitates a more accurate reflection of individual medal performance, thereby making the features fed into the Random Forest Model more precise. We finally use a table to provide visual representation of the 2028 medal table, and the list of countries with their first-time medalists is presented. Furthermore, we identify several key events where countries have a significant advantage, and calculate their impact in that table.<br>
+        For Task 2, we need to explore the "great coach" effect on a country's medal count and determine whether certain countries should prioritize the development of specific sports. Owing to the free movement of coaches, a Difference-in-Differences (DID) model was constructed to explain the effect of great coaches, using the coaching careers of Lang Ping, Béla Károlyi, and Jon Urbanchek as key examples. The regression results indicate that the arrival of a great coach significantly increases the likelihood of a team winning between 0.5 to 1.5 additional medal tiers, while the departure of a great coach significantly reduces the team's chances of winning medals.<br>
+        For Task 3, it requires us to find and explain the unique and insightful perspectives proposed by the model. Based on the results of the previous questions, a significant host-country effect was found, and we further explored it. We still used the Random Forest Model and filtered the data from 1960 onwards. The data were divided into two datasets for model training: one with $Host_{c,y} = 1$ and the other with $Host_{c,y}= 0$. We also put forward some effective perspectives, such as attaching importance to first-time participation and emphasizing the continuation of historical medals.<br>
+        After that, in order to test our model, we compared our Random Forest Model with the traditional Ordered Logistic Regression Model with the same dataset. The outcomes indicate that our model exhibits a high level of robustness.
+    </div>
+</div>
+
+<div class="paper-div">
+    <span class="paper-item">
+        <span data-date="2025-01-28"></span>
+        <span class="download"><a href="./28Jan25v0.pdf"></a></span>
+    </span>
+</div>
+</body>
+</html>
