@@ -1,0 +1,107 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* 论文信息区域 */
+.info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.abstract {
+    font-size: 16px;
+    line-height: 1.8; /* 增加行高，文字更舒适 */
+    color: #444;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 25px; /* 摘要和表格之间的间距 */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 摘要的引用分隔线 */
+.abstract:before {
+    content: "Abstract";
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* 论文列表表格 */
+.paper-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 表头 */
+.paper-table th {
+    background: #f1f1f1;
+    font-weight: bold;
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* 表格内容 */
+.paper-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* 交替行颜色 */
+.paper-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* 鼠标悬停高亮 */
+.paper-table tr:hover {
+    background: #eef6ff;
+}
+
+/* 下载按钮 */
+.download-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.download-btn:hover {
+    background: #0056b3;
+}

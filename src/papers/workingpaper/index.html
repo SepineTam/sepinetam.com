@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Working Papers</title>
+    <link rel="stylesheet" href="src/wp.css">
+    <script src="./src/state.js"></script>
 </head>
 <body>
-    <a href="./animal/index.html">animal</a>
-    <a href="./gender/index.html">gender</a>
+<h1>Working Papers</h1>
+<ul>
+    <li>
+        <div class="text-content">
+            <a href="./animal/index.html"></a>
+            <span class="title">Animal Economic</span>
+            <span class="subtitle">The Evidence from China</span>
+        </div>
+        <span class="new" data-date="2024-11-10"></span>
+    </li>
+    <li>
+        <div class="text-content">
+            <a href="./gender/index.html"></a>
+            <span class="title">Equality and Development</span>
+            <span class="subtitle">Gender Insights with Evidence from China</span>
+        </div>
+        <span class="update" data-date="2025-01-10"></span>
+    </li>
+    <li>
+        <div class="text-content">
+            <a href="./olympic/index.html"></a>
+            <span class="title">Beyond the Podium</span>
+            <span class="subtitle">Medal Counts Prediction, Great Coaches and Host Effect</span>
+        </div>
+        <span class="new" data-date="2025-01-28"></span>
+    </li>
+</ul>
+<!--<script>-->
+<!--    document.addEventListener("DOMContentLoaded", function() {-->
+<!--        const newSpans = document.querySelectorAll('span.new');-->
+<!--        const updateSpans = document.querySelectorAll('span.update');-->
+
+<!--        newSpans.forEach(span => {-->
+<!--            const date = new Date(span.getAttribute('data-date'));-->
+<!--            span.textContent = `New: ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;-->
+<!--        });-->
+
+<!--        updateSpans.forEach(span => {-->
+<!--            const date = new Date(span.getAttribute('data-date'));-->
+<!--            span.textContent = `Update: ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>
