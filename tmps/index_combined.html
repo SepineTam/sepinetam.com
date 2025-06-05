@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepine Tam's Scholar Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "qa34ba9qeg");
+    </script>
+    <script>
+        const translations = {
+            'en': {
+                'title': 'Sepine Tam\'s Scholar Website',
+                'about_me': 'About Me',
+                'education': 'Education',
+                'projects': 'Projects',
+                'awards': 'Awards',
+                'experience': 'Experience',
+                'papers': 'Papers',
+                'others': 'Others'
+            },
+            'zh-CN': {
+                'title': '谭松的个人学术网站',
+                'about_me': '关于我',
+                'education': '教育经历',
+                'projects': '研究项目',
+                'awards': '获奖情况',
+                'experience': '工作经历',
+                'papers': '学术论文',
+                'others': '其他信息'
+            },
+            'es': {
+                'title': 'Página académica de Sepine Tam',
+                'about_me': 'Sobre mí',
+                'education': 'Educación',
+                'projects': 'Proyectos',
+                'awards': 'Premios',
+                'experience': 'Experiencia',
+                'papers': 'Artículos',
+                'others': 'Otros'
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            updateTextContent(lang);
+            // 调用languageHandler.js中的updatePageText函数更新其他页面文本
+            if (typeof updatePageText === 'function') {
+                updatePageText();
+            }
+        }
+
+        function updateTextContent(lang) {
+            document.title = translations[lang]['title'];
+            document.querySelector('a[href="#"]').textContent = translations[lang]['about_me'];
+            document.querySelector('a[href="#education"]').textContent = translations[lang]['education'];
+            document.querySelector('a[href="#production"]').textContent = translations[lang]['projects'];
+            document.querySelector('a[href="#awards"]').textContent = translations[lang]['awards'];
+            document.querySelector('a[href="#experience"]').textContent = translations[lang]['experience'];
+            document.querySelector('a[href="#paper"]').textContent = translations[lang]['papers'];
+            document.querySelector('a[href="#others"]').textContent = translations[lang]['others'];
+        }
+
+        document.getElementById('language-en').addEventListener('click', function() {
+            changeLanguage('en');
+        });
+        document.getElementById('language-cn').addEventListener('click', function() {
+            changeLanguage('zh-CN');
+        });
+        document.getElementById('language-sp').addEventListener('click', function() {
+            changeLanguage('es');
+        });
+
+        // Set default language to English
+        document.addEventListener('DOMContentLoaded', function() {
+            changeLanguage('en');
+        });
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100">
+    <div class="min-h-screen">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1 bg-gradient-to-br from-blue-100 to-white rounded-lg shadow-lg p-6 transform transition duration-500 hover:scale-105">
+                    <div class="profile-image-container mb-6">
+                        <img src="../src/img/head1/head.png" alt="Song Tan's 1:1 photo" class="rounded-full w-48 h-48 mx-auto object-cover shadow-md">
+                    </div>
+                    <h1 class="text-2xl font-bold text-center text-gray-800 mb-2">
+                        Sepine Tam<br><span class="text-lg text-gray-600">(Song Tan)</span>
+                    </h1>
+                    <h2 class="text-center text-gray-600 mb-6">
+                        School of Economics<br>
+                        Shanghai University
+                    </h2>
+                    <div class="grid grid-cols-2 gap-4 justify-items-center">
+                        <a href="mailto:sepinetam@gmail.com" class="text-gray-600 hover:text-blue-500 transition duration-300">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                        <a href="https://blog.sepinetam.com" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">
+                            <i class="fas fa-blog text-2xl"></i>
+                        </a>
+                        <a href="https://github.com/sepinetam" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/sepinetam" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://x.com/sepinetam" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-x-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@SepineTam" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-youtube text-2xl"></i>
+                        </a>
+                        <a href="https://orcid.org/orcid=0009-0006-7449-1094" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">
+                            <i class="fab fa-orcid text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-3 bg-gradient-to-br from-blue-100 to-white rounded-lg shadow-lg p-6 transform transition duration-500 hover:scale-101">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="space-x-4">
+                            <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">About Me</a>
+                            <a href="#education" class="text-gray-600 hover:text-blue-500 transition duration-300">Education</a>
+                            <a href="#production" class="text-gray-600 hover:text-blue-500 transition duration-300">Projects</a>
+                            <a href="#awards" class="text-gray-600 hover:text-blue-500 transition duration-300">Awards</a>
+                            <a href="#experience" class="text-gray-600 hover:text-blue-500 transition duration-300">Experience</a>
+                            <a href="#paper" class="text-gray-600 hover:text-blue-500 transition duration-300">Papers</a>
+                            <a href="#others" class="text-gray-600 hover:text-blue-500 transition duration-300">Others</a>
+                        </div>
+                        <div class="space-x-4">
+                            <a href="#" id="language-en" class="text-gray-600 hover:text-blue-500 transition duration-300">English</a>
+                            <a href="#" id="language-cn" class="text-gray-600 hover:text-blue-500 transition duration-300">中文</a>
+                            <a href="#" id="language-sp" class="text-gray-600 hover:text-blue-500 transition duration-300">Español</a>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div id="intro" class="section">
+                            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-user mr-2"></i>About Me
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed">
+                                Preface: Since September 2024, my work has become very busy. I am developing a guide software for the blind (yes, I am still a developer, and this project is completely open source and will be provided to blind friends completely free of charge in the future). At the same time, I am also preparing my big paper, which will be submitted to AER or JDE. If successful, this work is worthy of the Clark Award. So I am sorry that I can't update my personal homepage (including my Working Paper) in time.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed mt-4">
+                                If you want to get more info, you could follow my twitter.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed mt-4">
+                                I am currently pursuing my undergraduate studies at the School of Economics, Shanghai University. My research interests include:
+                            </p>
+                            <ul class="list-disc list-inside text-gray-600 mt-2">
+                                <li>Labor Economics</li>
+                                <li>Economic History(I am prepare for AER or JDE)</li>
+                                <li>Development Economics</li>
+                                <li>Game Theory</li>
+                                <li>Environment and Sustainable Development</li>
+                            </ul>
+                        </div>
+                        <div id="education" class="section">
+                            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-graduation-cap mr-2"></i>Education
+                            </h2>
+                            <div class="space-y-4">
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header flex items-center justify-between">
+                                        <time class="text-sm text-gray-500">2022 - Present</time>
+                                        <div class="title flex items-center">
+                                            <img src="https://www.shu.edu.cn/images/logoft.svg" class="w-8 h-8 mr-2" alt="Shanghai University">
+                                            <div>
+                                                <a href="https://www.shu.edu.cn" target="_blank" class="text-blue-500 hover:text-blue-700">Shanghai University</a>
+                                                <a href="https://www.soe.shu.edu.cn" target="_blank" class="text-blue-500 hover:text-blue-700">School of Economics</a>
+                                                <span class="text-gray-600">Undergraduate in Economics</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="production" class="section">
+                            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-project-diagram mr-2"></i>Projects
+                            </h2>
+                            <div class="space-y-4">
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <time class="text-sm text-gray-500">2024.07 - Present</time>
+                                        <div class="title text-lg font-medium text-gray-700">Shanghai University School of Economics Knowledge and Action Cup</div>
+                                    </div>
+                                    <div class="details mt-2">
+                                        <p class="text-gray-600">
+                                            Project Title: <strong>Integrated Green Development in the Yangtze River Delta Region — Research Based on Environmental Awareness and Development Strategy</strong>
+                                        </p>
+                                        <p class="text-gray-600 mt-2">
+                                            Promotional Website: <a href="https://gresh.com.cn" class="text-blue-500 hover:text-blue-700">Gresh</a>
+                                        </p>
+                                        <p class="text-gray-600 mt-2">
+                                            WeChat Official Account: <a href="https://mp.weixin.qq.com/s/A7Hj9Ef10-F4dwzoNE-FVA" class="text-blue-500 hover:text-blue-700">Gresh·Green Shelter for Shanghai</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <time class="text-sm text-gray-500">2023.09 - Present</time>
+                                        <div class="title text-lg font-medium text-gray-700">Shanghai University School-level Innovation and Entrepreneurship Project</div>
+                                    </div>
+                                    <div class="details mt-2">
+                                        <p class="text-gray-600">
+                                            Project Title: <strong>Reconstruction of China's Rural Circulation System — A New Concept Based on Supply and Marketing Cooperatives</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="awards" class="section">
+                            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-trophy mr-2"></i>Awards & Certificates
+                            </h2>
+                            <div class="space-y-4">
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <time class="text-sm text-gray-500">2025.01</time>
+                                        <div class="title text-lg font-medium text-gray-700">APMCM Successful Participant</div>
+                                    </div>
+                                    <div class="details mt-2">
+                                        <p class="text-gray-600">
+                                            Issuing Organization：<a href="https://www.apmcm.com/" class="text-blue-500 hover:text-blue-700">APMCM</a>
+                                        </p>
+                                        <ul class="skill mt-2">
+                                            <li data-text="Mathematical Modeling"><span>Mathematical Modeling</span></li>
+                                            <li data-text="Substitution Effect"><span>Substitution Effect</span></li>
+                                            <li data-text="Linear Regression"><span>Linear Regression</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <time class="text-sm text-gray-500">2024.11.15</time>
+                                        <div class="title text-lg font-medium text-gray-700">Shanghai University Undergraduate Academic Annual Conference Third Prize</div>
+                                    </div>
+                                    <div class="details mt-2">
+                                        <p class="text-gray-600">
+                                            Issuing Organization：<a href="https://www.shu.edu.cn" class="text-blue-500 hover:text-blue-700">Shanghai University</a>
+                                        </p>
+                                        <ul class="skill mt-2">
+                                            <li data-text="Microsoft Powerpoint"><span>Microsoft Powerpoint</span></li>
+                                            <li data-text="Game theory"><span>Game theory</span></li>
+                                            <li data-text="Rural Supply and Marketing Cooperatives"><span>Rural Supply and Marketing Cooperatives</span></li>
+                                            <li data-text="New Structure Economics"><span>New Structure Economics</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <time class="text-sm text-gray-500">2024.11.11</time>
+                                        <div class="title text-lg font-medium text-gray-700">"Inclusive Finance · Youth Practice" College Students' Social Practice Third Prize</div>
+                                    </div>
+                                    <div class="details mt-2">
+                                        <p class="text-gray-600">
+                                            Issuing Organization：<a href="https://www.cfdfe.cn/content/1725" class="text-blue-500 hover:text-blue-700">China Foundation for Development of Financial Education</a>
+                                        </p>
+                                        <ul class="skill mt-2">
+                                            <li data-text="Microsoft Powerpoint"><span>Microsoft Word</span></li>
+                                            <li data-text="Game theory"><span>Game theory</span></li>
+                                            <li data-text="Rural Supply and Marketing Cooperatives"><span>Rural Supply and Marketing Cooperatives</span></li>
+                                            <li data-text="New Structure Economics"><span>New Structure Economics</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <time class="text-sm text-gray-500">2024.08.29</time>
+                                        <div class="title text-lg font-medium text-gray-700">Google Digital Talent Training Program Outstanding Completion</div>
+                                    </div>
+                                    <div class="details mt-2">
+                                        <p class="text-gray-600">
+                                            Issuing Organization: Google Digital Talent Training Program
+                                        </p>
+                                        <p class="text-gray-600">
+                                            Certification Number: G20240818005660
+                                        </p>
+                                        <ul class="skill mt-2">
+                                            <li data-text="Overseas Marketing"><span>Overseas Marketing</span></li>
+                                            <li data-text="Google Ads"><span>Google Ads</span></li>
+                                            <li data-text="Business Globalization"><span>Business Globalization</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <time class="text-sm text-gray-500">2024.08.25</time>
+                                        <div class="title text-lg font-medium text-gray-700">Shanghai University School of Economics Summer Social Practice School-level C-level Project Completion</div>
+                                    </div>
+                                    <div class="details mt-2">
+                                        <p class="text-gray-600">
+                                            Issuing Organization: Shanghai University School of Economics
+                                        </p>
+                                        <ul class="skill mt-2">
+                                            <li data-text="Social Practice"><span>Social Practice</span></li>
+                                            <li data-text="Rural Development"><span>Rural Development</span></li>
+                                            <li data-text="Field Research"><span>Field Research</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="experience" class="section">
+                <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-briefcase mr-2"></i>Work Experience
+                </h2>
+                <div class="item bg-gray-50 p-4 rounded-lg">
+                    <div class="header">
+                        <time class="text-sm text-gray-500">2024.03 - 2024.08</time>
+                        <div class="title text-lg font-medium text-gray-700">
+                            <img src="https://www.cib.com.cn/cn/resources2023/css/2023/images/new_logo.png" class="logo" alt="Industrial Bank">
+                            <a href="https://www.cib.com.cn/" target="_blank" class="text-blue-500 hover:text-blue-700">Industrial Bank</a>
+                        </div>
+                    </div>
+                    <div class="details mt-2">
+                        <p class="text-gray-600">Intern</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="paper" class="section">
+                            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fa-solid fa-file mr-2"></i>Papers
+                            </h2>
+                            <div class="space-y-4">
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <div class="title text-lg font-medium text-gray-700">Animal Economic: The Evidence from China</div>
+                                    </div>
+                                </div>
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <div class="title text-lg font-medium text-gray-700">Is the market failing? ——An empirical test of the A-share market based on the central bank’s policy</div>
+                                    </div>
+                                </div>
+                                <div class="item bg-gray-50 p-4 rounded-lg">
+                                    <div class="header">
+                                        <div class="title text-lg font-medium text-gray-700">Environment, War and Economy: A Test Based on Ancient China</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="others" class="section">
+                            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fa-solid fa-square-check mr-2"></i>Others
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../src/js/skillAttributeUpdater.js"></script>
+    <script src="../new_src/js/languageHandler.js"></script>
+</body>
+</html>

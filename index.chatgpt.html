@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>谭淞（Sepine Tam）个人主页</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a73e8;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.1em;
+    }
+
+    nav {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      display: block;
+      padding: 15px 0;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #1a73e8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .section {
+      padding: 30px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #1a73e8;
+      border-left: 4px solid #1a73e8;
+      padding-left: 10px;
+      font-size: 1.8em;
+    }
+
+    .profile-img {
+      display: block;
+      max-width: 200px;
+      width: 100%;
+      border-radius: 50%;
+      margin: 20px auto;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1.0em;
+    }
+
+    .contact-info a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .list {
+      margin: 15px 0 0 20px;
+    }
+
+    .list li {
+      margin-bottom: 8px;
+    }
+
+    .skills-list, .research-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skills-list li, .research-list li {
+      background-color: #e8f0fe;
+      color: #1a73e8;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      .section h2 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>谭淞（Sepine Tam）</h1>
+    <p>上海大学经济学院本科生 | 比翼视界有限公司 创始人兼CTO | Stata-MCP 创始人 | 播客「纶今·深入浅出经济学」创作者</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">关于我</a></li>
+      <li><a href="#education">教育经历</a></li>
+      <li><a href="#awards">奖项证书</a></li>
+      <li><a href="#projects">项目经历</a></li>
+      <li><a href="#work">工作经历</a></li>
+      <li><a href="#skills">个人技能</a></li>
+      <li><a href="#research">相关研究</a></li>
+      <li><a href="#contact">联系方式</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2>关于我</h2>
+      <img class="profile-img" src="path_to_your_photo.jpg" alt="谭淞 个人照片" />
+      <p>研究领域包括发展经济学、经济史及人工智能在经济学中的应用。代表产品：<strong>Stata-MCP</strong>。</p>
+      <div class="contact-info">
+        <p>📞 132-5854-6709 | 📮 <a href="mailto:sepinetam@gmail.com">sepinetam@gmail.com</a></p>
+        <p>🔗 <a href="https://sepinetam.com" target="_blank">个人主页</a> | 💬 <a href="https://chatcv.sepinetam.com" target="_blank">对话简历</a> | 🤗 <a href="https://github.com/sepinetam" target="_blank">GitHub</a></p>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <h2>教育经历</h2>
+      <p><strong>上海大学</strong></p>
+      <p>经济学 本科在读 (2022.09 – 2026.06 预计)</p>
+      <p>主修课程 (GPA: 3.44/4.0)：</p>
+      <ul class="list">
+        <li>微观经济学（94）</li>
+        <li>中国经济发展（91）</li>
+        <li>计量经济学-全英语（97）</li>
+        <li>环境经济学（98）</li>
+        <li>新结构环境经济学（95）</li>
+      </ul>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section">
+      <h2>奖项证书</h2>
+      <ul class="list">
+        <li>
+          <strong>Google Prompting Essentials (Google)</strong> — 2025.04
+          <br />为了更好地了解和使用 AI 工具尤其是 LLM，在该项目中系统地学习了如何编写 prompt，并构建了适合让 LLM 写 Stata 代码的 prompt 集，基于该指令集优化 Stata-MCP 的性能，并针对自动化实证分析提供先行准备。
+        </li>
+        <li>
+          <strong>Advanced Training Programme at the UN (WFUNA)</strong> — 2025.01
+          <br />参与联合国与 WFUNA 共同组织的新青年领导力项目，前往瑞士联合国总部，重点参与 ESG 与 SDGs 议题，与 ILO 官员就性别议题对国家发展的影响展开讨论。
+        </li>
+        <li>
+          <strong>上海大学本科生学术论坛三等奖 (上海大学)</strong> — 2024.11
+          <br />通过文章《中国农村供销社重构框架——基于博弈视角的可行性研究》获奖，文章构建三方动态博弈模型推导农村供销社发展框架。
+        </li>
+        <li>
+          <strong>Google 数字人才培养计划优秀学员 (Google)</strong> — 2024.08
+          <br />通过该计划学习并设计 Google Ads 推广方案，熟悉海外落地页 SEO 优化策略。
+        </li>
+        <li>
+          <strong>上海大学本科生学术论坛二等奖 (上海大学)</strong> — 2023.12
+          <br />通过文章《Prioritizing the UN Sustainability Goals》获奖，建立动态发展模型，对中国可持续发展目标推进效果进行数理评价。
+        </li>
+        <li>
+          <strong>美国大学生数学建模竞赛 Honorable Mention (COMAP)</strong> — 2023.05
+          <br />提出多维变量相互影响的数学模型，预测全球及中国范围内 SDGs 进展，首次参赛即获 Honorable Mention，模型具有高度创新性与可操作性。
+        </li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2>项目经历</h2>
+      <ul class="list">
+        <li>
+          <strong>Stata-MCP (2025)</strong>
+          <br />Stata-MCP 是我独立开发的一款基于 Python 编写的科研辅助开源工具，使大模型能够调用 Stata 自动化生成并执行 Stata 代码。基础版已开源于 GitHub，企业版可自动分析研究问题并完成实证分析，现处于内部测试阶段，计划 9 月公测。Stata-MCP 是未来 EconResearchAgent 的基础工具。<br />
+          <a href="https://github.com/sepinetam/Stata-MCP" target="_blank">GitHub 仓库</a> | <a href="link_to_paper.pdf" target="_blank">相关研究报告 (Paper)</a>
+        </li>
+        <li>
+          <strong>DeepEcon (2025)</strong>
+          <br />DeepEcon 是一款支持 GPU 加速的开箱即用双重机器学习 Python 包。相较 EconML，DeepEcon 保持相似语法但支持 CUDA/MPS 加速，并在底层代码进行了优化。
+        </li>
+        <li>
+          <strong>NBER-MCP & AER-MCP (2025)</strong>
+          <br />基于爬虫技术的顶刊知识检索工具套件，可自动化在 NBER 和 AER 等顶级经济学期刊中检索相关文献，未来将并入 EconResearchAgent 的底层知识模块。
+        </li>
+        <li>
+          <strong>DtaDock (2025)</strong>
+          <br />DtaDock 是一款基于 Python-Flask 的开源自动化数据管理平台，为 Stata-MCP 企业版提供数据管理方案，也是 EconResearchAgent 的底层数据管理工具。
+        </li>
+        <li>
+          <strong>联合国新青年领导力项目 (2025)</strong>
+          <br />2025 年 1 月前往日内瓦联合国总部，与联合国及子组织官员交流，关注 SDGs 与 ESG 议题，讨论中国性别平等与发展问题，并以 Qian (2008)《Missing Women and the Price of Tea in China》为案例进行研讨。
+        </li>
+        <li>
+          <strong>Gresh-长三角地区一体化绿色发展 (2024)</strong>
+          <br />团队从长三角一体化视角出发，以绿色发展为切入，研究环境库兹涅茨曲线在中国的适用性，并撰写部分公司 ESG 报告。创建微信公众号「Gresh-绿意庇护」及网站 <a href="http://gresh.com.cn" target="_blank">gresh.com.cn</a>，推广环境数据与信息。该项目获上海大学知行杯三等奖。
+        </li>
+      </ul>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="work" class="section">
+      <h2>工作经历</h2>
+      <ul class="list">
+        <li>
+          <strong>比翼视界</strong> — CEO 兼 CTO (2025.03 – 至今)
+          <br />目前负责公司日常管理与运营、产品开发。主要产品包括：<strong>BeyesV</strong>（基于 YOLO 及 SmolVLM 的辅助盲人出行算法）和 <strong>Stata-MCP</strong>（AI 自动生成并执行 Stata 代码的 MCP 工具）。
+        </li>
+        <li>
+          <strong>兴业银行</strong> — 实习生 (2024.03 – 2024.09)
+          <br />在兴业银行企业金融部实习，参与上市公司尽职调查与授信审查报告撰写，熟练应用 Excel 函数并掌握 Word 排版技巧。
+        </li>
+      </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2>个人技能</h2>
+      <p><strong>外语能力：</strong></p>
+      <ul class="skills-list">
+        <li>英语 (English)</li>
+        <li>法语 (Français)</li>
+        <li>西班牙语 (Español)</li>
+      </ul>
+      <p><strong>编程技能：</strong></p>
+      <ul class="skills-list">
+        <li>Python</li>
+        <li>Stata</li>
+        <li>LaTeX</li>
+      </ul>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section">
+      <h2>相关研究</h2>
+      <ul class="research-list">
+        <li>谭淞. 《人工智能在经济学中的应用》[R]. Stata-MCP Fund, 2025.</li>
+        <li>TAN S. 《Will AI Promote the Efficiency of Economic Research?》[M]. 2025.</li>
+        <li>TAN S. 《Equality and Development: Gender Insights with Evidence from China》[R]. UN Working Paper, 2025.</li>
+        <li>谭淞, 冯慕窈. 《中国农村供销社重构框架——基于博弈视角的可行性研究》[R]. Working Paper, 2024.</li>
+        <li>QI Y, ZHENG X, TAN S. 《Prioritizing the UN Sustainability Goals》[R]. Working Paper, 2023.</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>联系方式</h2>
+      <p>如有任何问题或合作意向，欢迎联系：</p>
+      <p>📞 <strong>132-5854-6709</strong></p>
+      <p>📮 <a href="mailto:sepinetam@gmail.com">sepinetam@gmail.com</a></p>
+      <p>🔗 个人主页：<a href="https://sepinetam.com" target="_blank">https://sepinetam.com</a></p>
+      <p>💬 对话简历：<a href="https://chatcv.sepinetam.com" target="_blank">https://chatcv.sepinetam.com</a></p>
+      <p>🤗 GitHub：<a href="https://github.com/sepinetam" target="_blank">https://github.com/sepinetam</a></p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 谭淞（Sepine Tam）版权所有</p>
+  </footer>
+
+</body>
+</html>
