@@ -1,267 +1,221 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepine Tam - 个人网站集合</title>
+    <title>Sepine Tam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .card-icon {
-            width: 24px;
-            height: 24px;
-            display: inline-block;
-        }
-
-        .card p {
-            color: #666;
-            margin-bottom: 1.5rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             line-height: 1.6;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        a {
+            color: #0066cc;
             text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 500;
         }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        a:hover {
+            text-decoration: underline;
         }
-
-        .footer-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
+        .nav-link {
+            color: #333;
         }
-
-        .footer-section h3 {
-            color: white;
+        .nav-link:hover {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .section-title {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .card {
-                padding: 1.5rem;
-            }
-        }
-
-        .ai-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
         }
     </style>
 </head>
-<body>
-<div class="container">
-    <header>
-        <h1>🌟 Sepine Tam</h1>
-        <p class="subtitle">欢迎来到我的个人网站集合 - 探索不同AI助手创造的独特版本</p>
-    </header>
+<body class="bg-white text-gray-900">
 
-    <div class="grid">
-        <!-- AI 生成的网站版本 -->
-        <div class="card">
-            <div class="ai-badge">Claude AI</div>
-            <h3>
-                <span class="card-icon">🤖</span>
-                Claude 版本
-            </h3>
-            <p>由 Claude AI 助手设计和开发的个人网站版本，注重简洁优雅的设计风格和用户体验。</p>
-            <a href="index.claude.html" class="btn">查看网站</a>
-        </div>
+    <div class="max-w-4xl mx-auto px-4 py-8">
 
-        <div class="card">
-            <div class="ai-badge">ChatGPT</div>
-            <h3>
-                <span class="card-icon">💬</span>
-                ChatGPT 版本
-            </h3>
-            <p>由 ChatGPT 创建的个人网站，展现了不同的设计理念和交互方式。</p>
-            <a href="index.chatgpt.html" class="btn">查看网站</a>
-        </div>
+        <!-- Navigation -->
+        <nav class="mb-8 pb-6 border-b border-gray-300">
+            <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#awards" class="nav-link">Awards</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="zh-CN/" class="nav-link">中文版</a></li>
+            </ul>
+        </nav>
 
-        <div class="card">
-            <div class="ai-badge">DeepSeek</div>
-            <h3>
-                <span class="card-icon">🔍</span>
-                DeepSeek 版本
-            </h3>
-            <p>DeepSeek AI 打造的个人网站版本，融合了独特的设计思路和功能实现。</p>
-            <a href="index.deepseek.html" class="btn">查看网站</a>
-        </div>
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold mb-2">Sepine Tam</h1>
+            <p class="text-xl text-gray-600 mb-4">谭淞</p>
+            <p class="text-lg mb-2">
+                Undergraduate Student, <strong>Shanghai University</strong>
+            </p>
+            <p class="text-gray-600 mb-4">
+                Economics · Labor Economics · Development Economics · AI in Economic Research
+            </p>
+            <p class="text-sm">
+                <a href="mailto:sepinetam@gmail.com">sepinetam@gmail.com</a> ·
+                <a href="https://github.com/sepinetam" target="_blank">GitHub</a> ·
+                <a href="https://sepinetam.com" target="_blank">sepinetam.com</a>
+            </p>
+        </header>
 
-        <div class="card">
-            <div class="ai-badge">Gemini</div>
-            <h3>
-                <span class="card-icon">✍️</span>
-                Gemini 版本
-            </h3>
-            <p>Gemini AI 助手创建的个人网站，专注于内容展示和阅读体验优化。</p>
-            <a href="index.gemini.html" class="btn">查看网站</a>
-        </div>
+        <!-- About -->
+        <section id="about" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">About</h2>
+            <div class="space-y-3">
+                <p>
+                    I am an undergraduate student at <strong>Shanghai University</strong>, majoring in Economics.
+                    My research focuses on Labor Economics, Development Economics, and AI applications in economic research.
+                </p>
+                <p>
+                    I am the founder of <strong>Stata-MCP</strong>, an open-source tool that enables LLMs to write and execute Stata code automatically.
+                    I also serve as CEO at <strong>Shanghai Bayes Views Info-tech Co., Ltd.</strong>, working on AI-powered accessibility solutions.
+                </p>
+                <p>
+                    Beyond research, I create content about economics through my podcast <em>"Lunjin: Economics in Depth"</em>.
+                </p>
+            </div>
+        </section>
 
-        <!-- 模板和实验版本 -->
-        <div class="card">
-            <h3>
-                <span class="card-icon">🧪</span>
-                手工版
-            </h3>
-            <p>自己吭呲吭呲一点点敲出来的</p>
-            <a href="tmps/index.html" class="btn">匠人手作</a>
-        </div>
+        <!-- Research Interests -->
+        <section id="research" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Research Interests</h2>
+            <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Labor Economics (gender equality, labor markets, employment in China)</li>
+                <li>Development Economics (rural development, cooperatives, sustainable growth)</li>
+                <li>Economic History (long-term development patterns, institutional change)</li>
+                <li>AI in Economics (automated empirical analysis, LLM-assisted research)</li>
+            </ul>
+        </section>
 
-<!--        <div class="card">-->
-<!--            <h3>-->
-<!--                <span class="card-icon">🌏</span>-->
-<!--                手作的多语言-->
-<!--            </h3>-->
-<!--            <p>探索不同语言版本的网站设计，包含中文、西班牙语等多种语言支持。</p>-->
-<!--            <div style="margin-top: 1rem;">-->
-<!--                <a href="tmps/index_cn.html" class="btn" style="margin-right: 0.5rem;">中文</a>-->
-<!--                <a href="tmps/index_sp.html" class="btn">西班牙</a>-->
-<!--                <a href="tmps/index_combined.html" class="btn">多合一</a>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!-- Projects -->
+        <section id="projects" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Projects</h2>
+            <div class="space-y-4">
+                <div>
+                    <p class="font-bold">Stata-MCP</p>
+                    <p class="text-sm text-gray-600 mb-1">Founder & Developer (2025)</p>
+                    <p class="text-sm">An open-source Python-based tool that enables LLMs to write and execute Stata code automatically.</p>
+                </div>
+                <div>
+                    <p class="font-bold">DeepEcon</p>
+                    <p class="text-sm text-gray-600 mb-1">Developer (2025)</p>
+                    <p class="text-sm">An open-source Python package for double machine learning with GPU acceleration.</p>
+                </div>
+                <div>
+                    <p class="font-bold">NBER-MCP & AER-MCP</p>
+                    <p class="text-sm text-gray-600 mb-1">Developer (2025)</p>
+                    <p class="text-sm">Knowledge retrieval tools for top economics journals, enabling automated literature search through LLMs.</p>
+                </div>
+                <div>
+                    <p class="font-bold">DtaDock</p>
+                    <p class="text-sm text-gray-600 mb-1">Developer (2025)</p>
+                    <p class="text-sm">An automated data management platform based on Flask, providing data management for Stata-MCP.</p>
+                </div>
+                <div>
+                    <p class="font-bold">BeyesV</p>
+                    <p class="text-sm text-gray-600 mb-1">CTO & Developer (2025)</p>
+                    <p class="text-sm">An AI-powered accessibility solution based on YOLO and SmolVLM to assist visually impaired individuals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Selected Publications</h2>
+            <div class="space-y-3">
+                <p class="text-sm">
+                    Tan, S. (2025). <em>Will AI Promote the Efficiency of Economic Research?</em>
+                </p>
+                <p class="text-sm">
+                    Tan, S. (2025). <em>Equality and Development: Gender Insights with Evidence from China</em>. UN Working Paper.
+                </p>
+                <p class="text-sm">
+                    Tan, S., & Feng, M. (2024). <em>Reconstruction Framework of Rural Supply and Marketing Cooperatives in China: A Feasibility Study Based on Game Theory</em>. Working Paper.
+                </p>
+                <p class="text-sm">
+                    Qi, Y., Zheng, X., & Tan, S. (2023). <em>Prioritizing the UN Sustainability Goals</em>. Working Paper.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Education</h2>
+            <div class="space-y-2">
+                <p>
+                    <strong>B.A. in Economics</strong> (Expected 2026)<br>
+                    Shanghai University, Shanghai, China<br>
+                    <span class="text-sm text-gray-600">GPA: 3.44/4.0</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Awards -->
+        <section id="awards" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Awards & Honors</h2>
+            <ul class="list-disc list-inside space-y-1 text-sm ml-4">
+                <li>Google Prompting Essentials, Google (2025)</li>
+                <li>Advanced Training Programme at the UN, WFUNA (2025)</li>
+                <li>Third Prize, Shanghai University Undergraduate Academic Forum (2024)</li>
+                <li>Google Digital Talent Program Excellent Student, Google (2024)</li>
+                <li>Second Prize, Shanghai University Undergraduate Academic Forum (2023)</li>
+                <li>Honorable Mention, Mathematical Contest in Modeling, COMAP (2023)</li>
+            </ul>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Work Experience</h2>
+            <div class="space-y-3">
+                <div>
+                    <p class="font-bold">CEO & Founder</p>
+                    <p class="text-sm text-gray-600">Shanghai Bayes Views Info-tech Co., Ltd. (2025 - Present)</p>
+                </div>
+                <div>
+                    <p class="font-bold">Intern</p>
+                    <p class="text-sm text-gray-600">Industrial Bank, Corporate Finance Department (2024)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Skills</h2>
+            <div class="space-y-2">
+                <p><strong>Languages:</strong> English, French, Spanish</p>
+                <p><strong>Programming:</strong> Python, Stata, LaTeX</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Contact</h2>
+            <div class="space-y-1 text-sm">
+                <p><strong>Email:</strong> <a href="mailto:sepinetam@gmail.com">sepinetam@gmail.com</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/sepinetam" target="_blank">github.com/sepinetam</a></p>
+                <p><strong>Website:</strong> <a href="https://sepinetam.com" target="_blank">sepinetam.com</a></p>
+                <p><strong>ChatCV:</strong> <a href="https://chatcv.sepinetam.com" target="_blank">chatcv.sepinetam.com</a></p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-6 mt-12 border-t border-gray-300 text-sm text-gray-600">
+            <p>&copy; <span id="year"></span> Sepine Tam. All rights reserved.</p>
+        </footer>
+
     </div>
 
-    <div class="footer-section">
-        <h3>📂 其他资源</h3>
-        <div class="footer-links">
-            <a href="paper/">Working Paper</a>
-        </div>
-    </div>
-</div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
