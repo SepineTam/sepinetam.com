@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Sepine Tam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .nav-link {
+            color: #333;
+        }
+        .nav-link:hover {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .section-title {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Navigation -->
+        <nav class="mb-8 pb-6 border-b border-gray-300">
+            <ul class="flex flex-wrap gap-x-6 gap-y-2 text-base">
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+                <li><a href="zh-CN/" class="nav-link">中文</a></li>
+            </ul>
+        </nav>
+
+        <h1 class="text-4xl font-bold mb-8">Research</h1>
+
+        <!-- Research Interests -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Research Interests</h2>
+            <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Labor Economics (gender equality, labor markets, employment in China)</li>
+                <li>Development Economics (rural development, cooperatives, sustainable growth)</li>
+                <li>Economic History (long-term development patterns, institutional change)</li>
+                <li>AI in Economics (automated empirical analysis, LLM-assisted research)</li>
+            </ul>
+        </section>
+
+        <!-- Publications -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Publications</h2>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-sm">
+                        Tan, S. (2025). <em>Will AI Promote the Efficiency of Economic Research?</em>
+                    </p>
+                </div>
+                <div>
+                    <p class="text-sm">
+                        Tan, S. (2025). <em>Equality and Development: Gender Insights with Evidence from China</em>. UN Working Paper.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-sm">
+                        Tan, S., & Feng, M. (2024). <em>Reconstruction Framework of Rural Supply and Marketing Cooperatives in China: A Feasibility Study Based on Game Theory</em>. Working Paper.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-sm">
+                        Qi, Y., Zheng, X., & Tan, S. (2023). <em>Prioritizing the UN Sustainability Goals</em>. Working Paper.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Working Papers -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Working Papers</h2>
+            <div class="space-y-4">
+                <div>
+                    <p class="font-semibold">人工智能在经济学中的应用</p>
+                    <p class="text-sm text-gray-600">Stata-MCP Fund, 2025</p>
+                    <p class="text-sm mt-1">
+                        Exploring the application of artificial intelligence and large language models in economic research,
+                        focusing on automated empirical analysis and research efficiency improvement.
+                    </p>
+                </div>
+                <div>
+                    <p class="font-semibold">中国农村供销社重构框架——基于博弈视角的可行性研究</p>
+                    <p class="text-sm text-gray-600">Working Paper, 2024 (with 冯慕窈)</p>
+                    <p class="text-sm mt-1">
+                        Constructing a three-party dynamic game model to analyze the feasibility and development framework
+                        of rural supply and marketing cooperatives in China.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-6 mt-12 border-t border-gray-300 text-sm text-gray-600">
+            <p>&copy; <span id="year"></span> Sepine Tam. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

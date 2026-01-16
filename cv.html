@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Sepine Tam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .nav-link {
+            color: #333;
+        }
+        .nav-link:hover {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .section-title {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Navigation -->
+        <nav class="mb-8 pb-6 border-b border-gray-300">
+            <ul class="flex flex-wrap gap-x-6 gap-y-2 text-base">
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+                <li><a href="zh-CN/" class="nav-link">中文</a></li>
+            </ul>
+        </nav>
+
+        <h1 class="text-4xl font-bold mb-8">Curriculum Vitae</h1>
+
+        <!-- Education -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Education</h2>
+            <div class="space-y-4">
+                <div>
+                    <p class="font-bold text-lg">B.A. in Economics</p>
+                    <p class="text-gray-700">Shanghai University, Shanghai, China</p>
+                    <p class="text-sm text-gray-600">Expected 2026 | GPA: 3.44/4.0</p>
+                    <p class="text-sm text-gray-600 mt-2">
+                        <strong>Relevant Coursework:</strong> Microeconomics (94), China's Economic Development (91),
+                        Econometrics (97), Environmental Economics (98), New Structural Environmental Economics (95)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Work Experience</h2>
+            <div class="space-y-4">
+                <div>
+                    <p class="font-bold text-lg">CEO & Founder</p>
+                    <p class="text-gray-700">Shanghai Bayes Views Info-tech Co., Ltd.</p>
+                    <p class="text-sm text-gray-600">2025 - Present</p>
+                    <ul class="list-disc list-inside text-sm ml-4 mt-2 space-y-1">
+                        <li>Led company operations and product development</li>
+                        <li>Developed BeyesV (AI-powered accessibility solution using YOLO and SmolVLM)</li>
+                        <li>Created Stata-MCP (open-source tool for automated Stata code generation and execution)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold text-lg">Intern</p>
+                    <p class="text-gray-700">Industrial Bank, Corporate Finance Department</p>
+                    <p class="text-sm text-gray-600">2024</p>
+                    <ul class="list-disc list-inside text-sm ml-4 mt-2 space-y-1">
+                        <li>Conducted due diligence on listed companies</li>
+                        <li>Drafted credit review reports</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Awards & Honors</h2>
+            <ul class="list-disc list-inside space-y-2 text-sm ml-4">
+                <li>Google Prompting Essentials, Google (2025)</li>
+                <li>Advanced Training Programme at the UN, WFUNA (2025)</li>
+                <li>Third Prize, Shanghai University Undergraduate Academic Forum (2024)</li>
+                <li>Google Digital Talent Program Excellent Student, Google (2024)</li>
+                <li>Second Prize, Shanghai University Undergraduate Academic Forum (2023)</li>
+                <li>Honorable Mention, Mathematical Contest in Modeling, COMAP (2023)</li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-title">Skills</h2>
+            <div class="space-y-2">
+                <p><strong>Languages:</strong> English, French, Spanish</p>
+                <p><strong>Programming:</strong> Python, Stata, LaTeX</p>
+                <p><strong>Research Tools:</strong> Machine Learning, Causal Inference, LLM-assisted Research</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-6 mt-12 border-t border-gray-300 text-sm text-gray-600">
+            <p>&copy; <span id="year"></span> Sepine Tam. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
