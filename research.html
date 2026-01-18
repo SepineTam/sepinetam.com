@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Sepine Tam</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         a {
             color: #0066cc;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
         a:hover {
+            color: #004499;
             text-decoration: underline;
         }
         .nav-link {
@@ -24,10 +28,185 @@
             color: #0066cc;
             text-decoration: none;
         }
-        .section-title {
-            border-bottom: 1px solid #ccc;
+
+        /* Markdown content styling */
+        #markdown-content {
+            font-size: 1.05rem;
+        }
+
+        #markdown-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #1a1a1a;
+            color: #1a1a1a;
+        }
+
+        #markdown-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
             padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+
+        #markdown-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 2rem;
             margin-bottom: 1rem;
+            color: #444;
+        }
+
+        #markdown-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+
+        #markdown-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        #markdown-content ol {
+            list-style-type: decimal;
+            padding-left: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #markdown-content li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        #markdown-content ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        #markdown-content em {
+            font-style: italic;
+            color: #444;
+        }
+
+        #markdown-content strong {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        #markdown-content code {
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+
+        #markdown-content pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        #markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+            color: #333;
+            font-size: 0.9em;
+        }
+
+        #markdown-content blockquote {
+            border-left: 4px solid #0066cc;
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            margin-left: 0;
+            background-color: #f8f9fa;
+            color: #555;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        #markdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        #markdown-content th,
+        #markdown-content td {
+            border: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        #markdown-content th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        #markdown-content tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* Link styling in markdown */
+        #markdown-content p > a {
+            border-bottom: 1px dotted #0066cc;
+        }
+
+        #markdown-content p > a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* Better spacing for sections */
+        #markdown-content h2 + ul,
+        #markdown-content h2 + ol,
+        #markdown-content h2 + p {
+            margin-top: 1rem;
+        }
+
+        /* Loading state */
+        .loading-text {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Error state */
+        .error-box {
+            background-color: #fee;
+            border: 1px solid #fcc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .error-box h3 {
+            color: #c33;
+            margin-top: 0;
+        }
+
+        /* Publication list styling */
+        #markdown-content ul li p {
+            margin-bottom: 0.5rem;
+        }
+
+        #markdown-content ul li p:first-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -46,68 +225,10 @@
             </ul>
         </nav>
 
-        <h1 class="text-4xl font-bold mb-8">Research</h1>
-
-        <!-- Research Interests -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold section-title">Research Interests</h2>
-            <ul class="list-disc list-inside space-y-1 ml-4">
-                <li>Labor Economics (gender equality, labor markets, employment in China)</li>
-                <li>Development Economics (rural development, cooperatives, sustainable growth)</li>
-                <li>Economic History (long-term development patterns, institutional change)</li>
-                <li>AI in Economics (automated empirical analysis, LLM-assisted research)</li>
-            </ul>
-        </section>
-
-        <!-- Publications -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold section-title">Publications</h2>
-            <div class="space-y-4">
-                <div>
-                    <p class="text-sm">
-                        Tan, S. (2025). <em>Will AI Promote the Efficiency of Economic Research?</em>
-                    </p>
-                </div>
-                <div>
-                    <p class="text-sm">
-                        Tan, S. (2025). <em>Equality and Development: Gender Insights with Evidence from China</em>. UN Working Paper.
-                    </p>
-                </div>
-                <div>
-                    <p class="text-sm">
-                        Tan, S., & Feng, M. (2024). <em>Reconstruction Framework of Rural Supply and Marketing Cooperatives in China: A Feasibility Study Based on Game Theory</em>. Working Paper.
-                    </p>
-                </div>
-                <div>
-                    <p class="text-sm">
-                        Qi, Y., Zheng, X., & Tan, S. (2023). <em>Prioritizing the UN Sustainability Goals</em>. Working Paper.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Working Papers -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold section-title">Working Papers</h2>
-            <div class="space-y-4">
-                <div>
-                    <p class="font-semibold">人工智能在经济学中的应用</p>
-                    <p class="text-sm text-gray-600">Stata-MCP Fund, 2025</p>
-                    <p class="text-sm mt-1">
-                        Exploring the application of artificial intelligence and large language models in economic research,
-                        focusing on automated empirical analysis and research efficiency improvement.
-                    </p>
-                </div>
-                <div>
-                    <p class="font-semibold">中国农村供销社重构框架——基于博弈视角的可行性研究</p>
-                    <p class="text-sm text-gray-600">Working Paper, 2024 (with 冯慕窈)</p>
-                    <p class="text-sm mt-1">
-                        Constructing a three-party dynamic game model to analyze the feasibility and development framework
-                        of rural supply and marketing cooperatives in China.
-                    </p>
-                </div>
-            </div>
-        </section>
+        <!-- Dynamic Markdown Content -->
+        <div id="markdown-content">
+            <p class="loading-text">Loading research content...</p>
+        </div>
 
         <!-- Footer -->
         <footer class="pt-6 mt-12 border-t border-gray-300 text-sm text-gray-600">
@@ -117,7 +238,44 @@
     </div>
 
     <script>
+        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Configure marked options
+        marked.setOptions({
+            breaks: true,
+            gfm: true
+        });
+
+        // Load and render Markdown
+        async function loadMarkdown() {
+            try {
+                const response = await fetch('research.md');
+                if (!response.ok) {
+                    throw new Error('Failed to load research.md');
+                }
+                const markdownText = await response.text();
+                const html = marked.parse(markdownText);
+                document.getElementById('markdown-content').innerHTML = html;
+            } catch (error) {
+                console.error('Error loading markdown:', error);
+                document.getElementById('markdown-content').innerHTML = `
+                    <div class="error-box">
+                        <h3>Unable to Load Research Content</h3>
+                        <p class="mb-3">This page needs to be viewed through a web server.</p>
+                        <p class="text-sm mb-2">Try one of these methods:</p>
+                        <ul class="text-sm mt-2">
+                            <li><strong>Local server:</strong> Run <code>python3 -m http.server 8000</code> in this directory</li>
+                            <li><strong>VS Code:</strong> Install "Live Server" extension and right-click → "Open with Live Server"</li>
+                            <li><strong>GitHub Pages:</strong> Deploy to GitHub Pages for HTTPS access</li>
+                        </ul>
+                    </div>
+                `;
+            }
+        }
+
+        // Load markdown when page is ready
+        document.addEventListener('DOMContentLoaded', loadMarkdown);
     </script>
 
 </body>

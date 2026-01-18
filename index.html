@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepine Tam</title>
+    <title>About - Sepine Tam</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         a {
             color: #0066cc;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
         a:hover {
+            color: #004499;
             text-decoration: underline;
         }
         .nav-link {
@@ -29,13 +32,109 @@
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
+        #markdown-content {
+            font-size: 1.05rem;
+        }
+        #markdown-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #1a1a1a;
+            color: #1a1a1a;
+        }
+        #markdown-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+        #markdown-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+        #markdown-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+        #markdown-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        #markdown-content ol {
+            list-style-type: decimal;
+            padding-left: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        #markdown-content li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        #markdown-content ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        #markdown-content em {
+            font-style: italic;
+            color: #444;
+        }
+        #markdown-content strong {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        #markdown-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        #markdown-content code {
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        #markdown-content pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+        #markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+            color: #333;
+        }
+        #markdown-content blockquote {
+            border-left: 4px solid #0066cc;
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            margin-left: 0;
+            background-color: #f8f9fa;
+            color: #555;
+            border-radius: 0 4px 4px 0;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
-
     <div class="max-w-4xl mx-auto px-4 py-8">
-
-        <!-- Navigation -->
         <nav class="mb-8 pb-6 border-b border-gray-300">
             <ul class="flex flex-wrap gap-x-6 gap-y-2 text-base">
                 <li><a href="index.html" class="nav-link">About</a></li>
@@ -45,74 +144,31 @@
                 <li><a href="zh-CN/" class="nav-link">中文</a></li>
             </ul>
         </nav>
-
-        <!-- Header -->
-        <header class="mb-8">
-            <h1 class="text-4xl font-bold mb-2">Sepine Tam</h1>
-            <p class="text-xl text-gray-600 mb-4">谭淞</p>
-            <p class="text-lg mb-2">
-                Undergraduate Student, <strong>Shanghai University</strong>
-            </p>
-            <p class="text-gray-600 mb-4">
-                Economics · Labor Economics · Development Economics · AI in Economic Research
-            </p>
-            <p class="text-sm">
-                <a href="mailto:sepinetam@gmail.com">sepinetam@gmail.com</a> ·
-                <a href="https://github.com/sepinetam" target="_blank">GitHub</a> ·
-                <a href="https://sepinetam.com" target="_blank">sepinetam.com</a>
-            </p>
-        </header>
-
-        <!-- About -->
-        <section id="about" class="mb-8">
-            <h2 class="text-2xl font-bold section-title">About</h2>
-            <div class="space-y-3">
-                <p>
-                    I am an undergraduate student at <strong>Shanghai University</strong>, majoring in Economics.
-                    My research focuses on Labor Economics, Development Economics, and AI applications in economic research.
-                </p>
-                <p>
-                    I am the founder of <strong>Stata-MCP</strong>, an open-source tool that enables LLMs to write and execute Stata code automatically.
-                    I also serve as CEO at <strong>Shanghai Bayes Views Info-tech Co., Ltd.</strong>, working on AI-powered accessibility solutions.
-                </p>
-                <p>
-                    Beyond research, I create content about economics through my podcast <em>"Lunjin: Economics in Depth"</em>.
-                </p>
-            </div>
-        </section>
-
-        <!-- Research Interests -->
-        <section id="research" class="mb-8">
-            <h2 class="text-2xl font-bold section-title">Research Interests</h2>
-            <ul class="list-disc list-inside space-y-1 ml-4">
-                <li>Labor Economics (gender equality, labor markets, employment in China)</li>
-                <li>Development Economics (rural development, cooperatives, sustainable growth)</li>
-                <li>Economic History (long-term development patterns, institutional change)</li>
-                <li>AI in Economics (automated empirical analysis, LLM-assisted research)</li>
-            </ul>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="mb-8">
-            <h2 class="text-2xl font-bold section-title">Contact</h2>
-            <div class="space-y-1 text-sm">
-                <p><strong>Email:</strong> <a href="mailto:sepinetam@gmail.com">sepinetam@gmail.com</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/sepinetam" target="_blank">github.com/sepinetam</a></p>
-                <p><strong>Website:</strong> <a href="https://sepinetam.com" target="_blank">sepinetam.com</a></p>
-                <p><strong>ChatCV:</strong> <a href="https://chatcv.sepinetam.com" target="_blank">chatcv.sepinetam.com</a></p>
-            </div>
-        </section>
-
-        <!-- Footer -->
+        <div id="markdown-content">
+            <p class="text-gray-500">Loading...</p>
+        </div>
         <footer class="pt-6 mt-12 border-t border-gray-300 text-sm text-gray-600">
             <p>&copy; <span id="year"></span> Sepine Tam. All rights reserved.</p>
         </footer>
-
     </div>
-
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        marked.setOptions({ breaks: true, gfm: true });
+        async function loadMarkdown() {
+            try {
+                const response = await fetch('about.md');
+                if (!response.ok) throw new Error('Failed to load');
+                const html = marked.parse(await response.text());
+                document.getElementById('markdown-content').innerHTML = html;
+            } catch (error) {
+                document.getElementById('markdown-content').innerHTML = `
+                    <div style="background: #fee; border: 1px solid #fcc; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #c33;">Unable to Load</h3>
+                        <p>Please view through a web server (not file://)</p>
+                    </div>`;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadMarkdown);
     </script>
-
 </body>
 </html>

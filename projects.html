@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Sepine Tam</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         a {
             color: #0066cc;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
         a:hover {
+            color: #004499;
             text-decoration: underline;
         }
         .nav-link {
@@ -24,18 +27,73 @@
             color: #0066cc;
             text-decoration: none;
         }
-        .section-title {
-            border-bottom: 1px solid #ccc;
+        #markdown-content {
+            font-size: 1.05rem;
+        }
+        #markdown-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #1a1a1a;
+            color: #1a1a1a;
+        }
+        #markdown-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
             padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+        #markdown-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 2rem;
             margin-bottom: 1rem;
+            color: #444;
+        }
+        #markdown-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+        #markdown-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        #markdown-content ol {
+            list-style-type: decimal;
+            padding-left: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        #markdown-content li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        #markdown-content ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        #markdown-content em {
+            font-style: italic;
+            color: #666;
+        }
+        #markdown-content strong {
+            font-weight: 700;
+            color: #1a1a1a;
         }
     </style>
 </head>
 <body class="bg-white text-gray-900">
-
     <div class="max-w-4xl mx-auto px-4 py-8">
-
-        <!-- Navigation -->
         <nav class="mb-8 pb-6 border-b border-gray-300">
             <ul class="flex flex-wrap gap-x-6 gap-y-2 text-base">
                 <li><a href="index.html" class="nav-link">About</a></li>
@@ -45,81 +103,27 @@
                 <li><a href="zh-CN/" class="nav-link">中文</a></li>
             </ul>
         </nav>
-
-        <h1 class="text-4xl font-bold mb-8">Projects</h1>
-
-        <!-- Projects -->
-        <section class="mb-8">
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900">Stata-MCP</h3>
-                    <p class="text-sm text-gray-600 mb-1">Founder & Developer (2025)</p>
-                    <p class="text-sm">
-                        An open-source Python-based tool that enables LLMs to write and execute Stata code automatically.
-                        Aims to build the foundation for future automated economic research agents.
-                        <a href="https://github.com/sepinetam/Stata-MCP" target="_blank">GitHub Repository</a>
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900">DeepEcon</h3>
-                    <p class="text-sm text-gray-600 mb-1">Developer (2025)</p>
-                    <p class="text-sm">
-                        An open-source Python package for double machine learning with GPU acceleration.
-                        Optimized for CUDA/MPS with a clean API similar to EconML.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900">NBER-MCP & AER-MCP</h3>
-                    <p class="text-sm text-gray-600 mb-1">Developer (2025)</p>
-                    <p class="text-sm">
-                        Knowledge retrieval tools for top economics journals. Enables automated literature search
-                        through LLMs, serving as the knowledge base for future research agents.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900">DtaDock</h3>
-                    <p class="text-sm text-gray-600 mb-1">Developer (2025)</p>
-                    <p class="text-sm">
-                        An automated data management platform based on Flask, providing data management for Stata-MCP.
-                        Also serves as the underlying data management tool for future EconResearchAgent.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900">BeyesV</h3>
-                    <p class="text-sm text-gray-600 mb-1">CTO & Developer (2025)</p>
-                    <p class="text-sm">
-                        An AI-powered accessibility solution based on YOLO and SmolVLM to assist visually impaired individuals.
-                        Provides navigation assistance and environmental awareness for the blind.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900">Gresh - Yangtze River Delta Green Development</h3>
-                    <p class="text-sm text-gray-600 mb-1">Team Member (2024)</p>
-                    <p class="text-sm">
-                        Explored green development in the Yangtze River Delta region from the perspective of integrated development.
-                        Analyzed the applicability of the Environmental Kuznets Curve in China and created ESG reports for selected companies.
-                        Established WeChat official account "Gresh-绿意庇护" and website gresh.com.cn to raise environmental awareness.
-                        Won Third Prize at Shanghai University Zhixing Cup.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
+        <div id="markdown-content">
+            <p class="text-gray-500">Loading...</p>
+        </div>
         <footer class="pt-6 mt-12 border-t border-gray-300 text-sm text-gray-600">
             <p>&copy; <span id="year"></span> Sepine Tam. All rights reserved.</p>
         </footer>
-
     </div>
-
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        marked.setOptions({ breaks: true, gfm: true });
+        async function loadMarkdown() {
+            try {
+                const response = await fetch('projects.md');
+                if (!response.ok) throw new Error('Failed to load');
+                const html = marked.parse(await response.text());
+                document.getElementById('markdown-content').innerHTML = html;
+            } catch (error) {
+                document.getElementById('markdown-content').innerHTML = '<p style="color: #c33;">Unable to load. Please view through a web server.</p>';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadMarkdown);
     </script>
-
 </body>
 </html>

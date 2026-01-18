@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>谭淞 (Sepine Tam)</title>
+    <title>关于我 - 谭淞</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         a {
             color: #0066cc;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
         a:hover {
+            color: #004499;
             text-decoration: underline;
         }
         .nav-link {
@@ -24,18 +27,79 @@
             color: #0066cc;
             text-decoration: none;
         }
-        .section-title {
-            border-bottom: 1px solid #ccc;
+        #markdown-content {
+            font-size: 1.05rem;
+        }
+        #markdown-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #1a1a1a;
+            color: #1a1a1a;
+        }
+        #markdown-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
             padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+        #markdown-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 2rem;
             margin-bottom: 1rem;
+            color: #444;
+        }
+        #markdown-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+        #markdown-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        #markdown-content ol {
+            list-style-type: decimal;
+            padding-left: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        #markdown-content li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        #markdown-content ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        #markdown-content em {
+            font-style: italic;
+            color: #444;
+        }
+        #markdown-content strong {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        #markdown-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
         }
     </style>
 </head>
 <body class="bg-white text-gray-900">
-
     <div class="max-w-4xl mx-auto px-4 py-8">
-
-        <!-- Navigation -->
         <nav class="mb-8 pb-6 border-b border-gray-300">
             <ul class="flex flex-wrap gap-x-6 gap-y-2 text-base">
                 <li><a href="../index.html" class="nav-link">关于我</a></li>
@@ -45,74 +109,27 @@
                 <li><a href="../" class="nav-link">English</a></li>
             </ul>
         </nav>
-
-        <!-- Header -->
-        <header class="mb-8">
-            <h1 class="text-4xl font-bold mb-2">谭淞</h1>
-            <p class="text-xl text-gray-600 mb-4">Sepine Tam</p>
-            <p class="text-lg mb-2">
-                上海大学经济学院<strong>本科生</strong>
-            </p>
-            <p class="text-gray-600 mb-4">
-                经济学 · 劳动经济学 · 发展经济学 · 人工智能在经济研究中的应用
-            </p>
-            <p class="text-sm">
-                <a href="mailto:sepinetam@gmail.com">sepinetam@gmail.com</a> ·
-                <a href="https://github.com/sepinetam" target="_blank">GitHub</a> ·
-                <a href="https://sepinetam.com" target="_blank">sepinetam.com</a>
-            </p>
-        </header>
-
-        <!-- About -->
-        <section id="about" class="mb-8">
-            <h2 class="text-2xl font-bold section-title">关于我</h2>
-            <div class="space-y-3">
-                <p>
-                    我是<strong>上海大学</strong>经济学院本科生，专业为经济学。
-                    我的研究方向主要集中在劳动经济学、发展经济学以及人工智能在经济研究中的应用。
-                </p>
-                <p>
-                    我是 <strong>Stata-MCP</strong> 的创始人，这是一个开源工具，可以让大语言模型自动编写并执行 Stata 代码。
-                    我还担任<strong>上海比翼视界信息科技有限公司</strong>的 CEO，致力于开发 AI 辅助的无障碍解决方案。
-                </p>
-                <p>
-                    除此之外，我通过播客<strong>「纶今·深入浅出经济学」</strong>创作经济学相关内容。
-                </p>
-            </div>
-        </section>
-
-        <!-- Research Interests -->
-        <section id="research" class="mb-8">
-            <h2 class="text-2xl font-bold section-title">研究方向</h2>
-            <ul class="list-disc list-inside space-y-1 ml-4">
-                <li>劳动经济学（性别平等、劳动力市场、中国的就业问题）</li>
-                <li>发展经济学（农村发展、供销合作社、可持续增长）</li>
-                <li>经济史（长期发展模式、制度变迁）</li>
-                <li>AI 在经济学中的应用（自动化实证分析、大模型辅助研究）</li>
-            </ul>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="mb-8">
-            <h2 class="text-2xl font-bold section-title">联系方式</h2>
-            <div class="space-y-1 text-sm">
-                <p><strong>邮箱：</strong><a href="mailto:sepinetam@gmail.com">sepinetam@gmail.com</a></p>
-                <p><strong>GitHub：</strong><a href="https://github.com/sepinetam" target="_blank">github.com/sepinetam</a></p>
-                <p><strong>个人主页：</strong><a href="https://sepinetam.com" target="_blank">sepinetam.com</a></p>
-                <p><strong>对话简历：</strong><a href="https://chatcv.sepinetam.com" target="_blank">chatcv.sepinetam.com</a></p>
-            </div>
-        </section>
-
-        <!-- Footer -->
+        <div id="markdown-content">
+            <p class="text-gray-500">加载中...</p>
+        </div>
         <footer class="pt-6 mt-12 border-t border-gray-300 text-sm text-gray-600">
             <p>&copy; <span id="year"></span> 谭淞 (Sepine Tam). 保留所有权利.</p>
         </footer>
-
     </div>
-
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        marked.setOptions({ breaks: true, gfm: true });
+        async function loadMarkdown() {
+            try {
+                const response = await fetch('about.md');
+                if (!response.ok) throw new Error('Failed to load');
+                const html = marked.parse(await response.text());
+                document.getElementById('markdown-content').innerHTML = html;
+            } catch (error) {
+                document.getElementById('markdown-content').innerHTML = '<p style="color: #c33;">无法加载内容，请通过 Web 服务器访问。</p>';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadMarkdown);
     </script>
-
 </body>
 </html>
